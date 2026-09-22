@@ -1040,17 +1040,6 @@
 
     <!-- TAB 1: GALLERY -->
     <section class="tab-pane active" id="pane-gallery">
-      <div class="filter-chips">
-        <button class="chip-btn active" onclick="filterGallery('all')" id="chip-all">Todas (44)</button>
-        <button class="chip-btn gold-chip" onclick="filterGallery('gold')" id="chip-gold" style="border-color: #f59e0b; color: #f59e0b; font-weight: 700;">🌟 Top Favs (3)</button>
-        <button class="chip-btn fav-chip" onclick="filterGallery('favs')" id="chip-favs">⭐ Favoritas (41)</button>
-        <button class="chip-btn" onclick="filterGallery('skyline')" id="chip-skyline">Skyline & Balcón</button>
-        <button class="chip-btn" onclick="filterGallery('desert')" id="chip-desert">Desierto & Dunas</button>
-        <button class="chip-btn" onclick="filterGallery('beach')" id="chip-beach">Playas & Relax</button>
-        <button class="chip-btn" onclick="filterGallery('dining')" id="chip-dining">Gastronomía & Cafés</button>
-        <button class="chip-btn" onclick="filterGallery('active')" id="chip-active">Aventura & Deporte</button>
-      </div>
-
       <div class="gallery-grid" id="gallery-container">
         <!-- Injected by JS -->
       </div>
@@ -1217,13 +1206,7 @@
     // Render Gallery Photos
     function renderGallery() {
       const container = document.getElementById('gallery-container');
-      filteredPhotos = currentCategory === 'all' 
-        ? PHOTOS 
-        : (currentCategory === 'gold'
-            ? PHOTOS.filter(p => p.is_gold)
-            : (currentCategory === 'favs'
-                ? PHOTOS.filter(p => p.is_fav)
-                : PHOTOS.filter(p => p.cats && p.cats.includes(currentCategory))));
+      filteredPhotos = PHOTOS;
 
       container.innerHTML = filteredPhotos.map((p, idx) => {
         const caption = currentLang === 'es' ? p.caption_es : p.caption_en;
@@ -1464,17 +1447,6 @@
       document.getElementById('nav-lbl-schedule').innerText = dict.navSchedule;
       document.getElementById('nav-lbl-venues').innerText = dict.navVenues;
       document.getElementById('nav-lbl-awards').innerText = dict.navAwards;
-      
-      // Gallery chips
-      document.getElementById('chip-all').innerText = dict.chipAll;
-      const chipGoldEl = document.getElementById('chip-gold');
-      if (chipGoldEl) chipGoldEl.innerText = dict.chipGold;
-      document.getElementById('chip-favs').innerText = dict.chipFavs;
-      document.getElementById('chip-skyline').innerText = dict.chipSkyline;
-      document.getElementById('chip-desert').innerText = dict.chipDesert;
-      document.getElementById('chip-beach').innerText = dict.chipBeach;
-      document.getElementById('chip-dining').innerText = dict.chipDining;
-      document.getElementById('chip-active').innerText = dict.chipActive;
       
       // Schedule intro
       document.getElementById('txt-schedule-intro').innerText = dict.scheduleIntro;

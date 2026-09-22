@@ -1059,19 +1059,8 @@
       <div id="quicklook-notice" style="background: linear-gradient(135deg, rgba(217,119,6,0.1), rgba(14,165,233,0.1)); border: 1px solid rgba(217,119,6,0.3); border-radius: 12px; padding: 12px 16px; margin: 12px 0 20px 0; font-size: 0.85rem; color: var(--text-main); display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
         <span style="font-size: 1.3rem;">📱</span>
         <div>
-          <strong>Vista previa de archivo:</strong> Las 44 fotos y recuerdos están cargados directamente aquí abajo. Para activar los <strong>filtros interactivos</strong> y ver fotos a <strong>pantalla completa</strong>, pulsa el botón de Compartir <span style="display:inline-block; font-size:1rem;">⎋</span> (abajo a la derecha) y elige <strong>Abrir en Safari</strong>.
+          <strong>Vista previa de archivo:</strong> Las 44 fotos y recuerdos están cargados directamente aquí abajo. Para ver fotos a <strong>pantalla completa</strong> y navegar por las secciones, pulsa el botón de Compartir <span style="display:inline-block; font-size:1rem;">⎋</span> (abajo a la derecha) y elige <strong>Abrir en Safari</strong>.
         </div>
-      </div>
-
-      <div class="filter-chips">
-        <button class="chip-btn active" onclick="filterGallery('all')" id="chip-all">Todas (44)</button>
-        <button class="chip-btn gold-chip" onclick="filterGallery('gold')" id="chip-gold" style="border-color: #f59e0b; color: #f59e0b; font-weight: 700;">🌟 Top Favs (3)</button>
-        <button class="chip-btn fav-chip" onclick="filterGallery('favs')" id="chip-favs">⭐ Favoritas (41)</button>
-        <button class="chip-btn" onclick="filterGallery('skyline')" id="chip-skyline">Skyline & Balcón</button>
-        <button class="chip-btn" onclick="filterGallery('desert')" id="chip-desert">Desierto & Dunas</button>
-        <button class="chip-btn" onclick="filterGallery('beach')" id="chip-beach">Playas & Relax</button>
-        <button class="chip-btn" onclick="filterGallery('dining')" id="chip-dining">Gastronomía & Cafés</button>
-        <button class="chip-btn" onclick="filterGallery('active')" id="chip-active">Aventura & Deporte</button>
       </div>
 
       <div class="gallery-grid" id="gallery-container">
@@ -2689,13 +2678,7 @@
     // Render Gallery Photos
     function renderGallery() {
       const container = document.getElementById('gallery-container');
-      filteredPhotos = currentCategory === 'all' 
-        ? PHOTOS 
-        : (currentCategory === 'gold'
-            ? PHOTOS.filter(p => p.is_gold)
-            : (currentCategory === 'favs'
-                ? PHOTOS.filter(p => p.is_fav)
-                : PHOTOS.filter(p => p.cats && p.cats.includes(currentCategory))));
+      filteredPhotos = PHOTOS;
 
       container.innerHTML = filteredPhotos.map((p, idx) => {
         const caption = currentLang === 'es' ? p.caption_es : p.caption_en;
@@ -2936,17 +2919,6 @@
       document.getElementById('nav-lbl-schedule').innerText = dict.navSchedule;
       document.getElementById('nav-lbl-venues').innerText = dict.navVenues;
       document.getElementById('nav-lbl-awards').innerText = dict.navAwards;
-      
-      // Gallery chips
-      document.getElementById('chip-all').innerText = dict.chipAll;
-      const chipGoldEl = document.getElementById('chip-gold');
-      if (chipGoldEl) chipGoldEl.innerText = dict.chipGold;
-      document.getElementById('chip-favs').innerText = dict.chipFavs;
-      document.getElementById('chip-skyline').innerText = dict.chipSkyline;
-      document.getElementById('chip-desert').innerText = dict.chipDesert;
-      document.getElementById('chip-beach').innerText = dict.chipBeach;
-      document.getElementById('chip-dining').innerText = dict.chipDining;
-      document.getElementById('chip-active').innerText = dict.chipActive;
       
       // Schedule intro
       document.getElementById('txt-schedule-intro').innerText = dict.scheduleIntro;
