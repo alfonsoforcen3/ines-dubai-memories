@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Inés en Dubái — Recuerdos y Diario de Viaje</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      
+      /* Light Theme (Default) */
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-glass: rgba(255, 255, 255, 0.85);
+      --border-color: #e2e8f0;
+      --border-focus: #3b82f6;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+      
+      --accent-blue: #0284c7;
+      --accent-blue-light: #e0f2fe;
+      --accent-gold: #d97706;
+      --accent-gold-light: #fef3c7;
+      --accent-emerald: #059669;
+      --accent-emerald-light: #d1fae5;
+      --accent-purple: #7c3aed;
+      --accent-purple-light: #ede9fe;
+      --accent-rose: #e11d48;
+      --accent-rose-light: #ffe4e6;
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      
+      --nav-bg: rgba(255, 255, 255, 0.9);
+      --pill-bg: #f1f5f9;
+      --pill-hover: #e2e8f0;
+    }
+
+    [data-theme="dark"] {
+      --bg-body: #090d16;
+      --bg-card: #111827;
+      --bg-card-glass: rgba(17, 24, 39, 0.88);
+      --border-color: #1f2937;
+      --border-focus: #60a5fa;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+      
+      --accent-blue: #38bdf8;
+      --accent-blue-light: rgba(56, 189, 248, 0.15);
+      --accent-gold: #fbbf24;
+      --accent-gold-light: rgba(251, 191, 36, 0.15);
+      --accent-emerald: #34d399;
+      --accent-emerald-light: rgba(52, 211, 153, 0.15);
+      --accent-purple: #a78bfa;
+      --accent-purple-light: rgba(167, 139, 250, 0.15);
+      --accent-rose: #fb7185;
+      --accent-rose-light: rgba(251, 113, 133, 0.15);
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+      
+      --nav-bg: rgba(17, 24, 39, 0.92);
+      --pill-bg: #1f2937;
+      --pill-hover: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.5;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      padding-bottom: env(safe-area-inset-bottom, 30px);
+    }
+
+    /* APP CONTAINER */
+    .app-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* TOP HEADER */
+    .header-bar {
+      padding: 24px 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-group {
+      flex: 1;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      margin-bottom: 10px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+
+    .main-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .main-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .control-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .control-btn:hover {
+      background: var(--pill-bg);
+      border-color: var(--border-focus);
+      transform: translateY(-1px);
+    }
+
+    /* STATS STRIP */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .metric-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* STICKY NAV BAR */
+    .nav-track-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 10px 0;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 2px;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-tab-btn:hover {
+      background: var(--pill-bg);
+      color: var(--text-main);
+    }
+
+    .nav-tab-btn.active {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    /* SECTIONS */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FILTER CHIPS (FOR GALLERY) */
+    .filter-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .chip-btn {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: var(--pill-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .chip-btn:hover {
+      background: var(--pill-hover);
+      color: var(--text-main);
+    }
+
+    .chip-btn.active {
+      background: var(--text-main);
+      color: var(--bg-card);
+      border-color: var(--text-main);
+    }
+
+    .chip-btn.fav-chip.active {
+      background: var(--accent-rose);
+      color: #ffffff;
+      border-color: var(--accent-rose);
+    }
+
+    /* GALLERY GRID */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .photo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .photo-thumb-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 66.6%; /* 3:2 Aspect Ratio */
+      background: #000;
+      overflow: hidden;
+    }
+
+    .photo-thumb-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-card:hover .photo-thumb-wrap img {
+      transform: scale(1.05);
+    }
+
+    .photo-badge-top {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .fav-star-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent-rose);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.5);
+    }
+
+    .gold-star-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .photo-card.is-gold {
+      border: 2px solid #f59e0b !important;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.28), var(--shadow-sm);
+    }
+
+    .mini-thumb-wrap.is-gold-thumb {
+      border: 2px solid #f59e0b !important;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+      position: relative;
+    }
+
+    .photo-info {
+      padding: 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .photo-caption {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .photo-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+    }
+
+    /* DAY JOURNAL TAB */
+    .day-selector-track {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .day-pill-btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .day-pill-btn.active {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+    }
+
+    .day-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .day-title-block h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .day-date-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-top: 2px;
+    }
+
+    .day-tag-badge {
+      background: var(--pill-bg);
+      color: var(--text-muted);
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .day-summary {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .day-highlights-box {
+      background: var(--pill-bg);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+
+    .box-heading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .day-highlights-box ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .day-highlights-box li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .day-highlights-box li::before {
+      content: "✦";
+      color: var(--accent-blue);
+      font-weight: bold;
+    }
+
+    .day-photos-carousel {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-thumb-wrap {
+      position: relative;
+      padding-top: 66.6%;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .mini-thumb-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .mini-thumb-wrap:hover img {
+      transform: scale(1.08);
+    }
+
+    /* SCHEDULE PLAN TAB (REVAMPED - NO MINUTE TIMINGS) */
+    .schedule-intro {
+      background: var(--accent-blue-light);
+      border: 1px solid var(--accent-blue);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .schedule-plans-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .plan-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .plan-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .plan-day-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .plan-status-tag {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .plan-phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .phase-col {
+      background: var(--pill-bg);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .phase-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .phase-text {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    /* VENUES TAB */
+    .venues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .venue-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .venue-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .venue-area {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 4px;
+    }
+
+    .venue-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .venue-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .map-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    .map-link-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* AWARDS TAB (REVAMPED WITH EMBEDDED PHOTOS) */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .award-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .award-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .award-photo-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 55%;
+      overflow: hidden;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .award-photo-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .award-photo-wrap:hover img {
+      transform: scale(1.06);
+    }
+
+    .award-body {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .award-category-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+    }
+
+    .award-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .award-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* LIGHTBOX MODAL WITH TOUCH SWIPE */
+    .lightbox-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox-backdrop.active {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img-wrap {
+      max-width: 100%;
+      max-height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    }
+
+    .lightbox-details {
+      margin-top: 14px;
+      text-align: center;
+      color: #ffffff;
+      max-width: 700px;
+    }
+
+    .lightbox-caption-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .lightbox-meta-text {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .lightbox-prev-btn { left: -60px; }
+    .lightbox-next-btn { right: -60px; }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    /* MOBILE RESPONSIVE OPTIMIZATIONS */
+    @media (max-width: 768px) {
+      .header-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .header-actions {
+        justify-content: flex-end;
+      }
+      .main-title {
+        font-size: 1.7rem;
+      }
+      .metrics-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .photo-info {
+        padding: 10px;
+      }
+      .photo-caption {
+        font-size: 0.8rem;
+      }
+      .plan-phases-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .venues-grid {
+        grid-template-columns: 1fr;
+      }
+      .awards-grid {
+        grid-template-columns: 1fr;
+      }
+      .lightbox-prev-btn { left: 10px; }
+      .lightbox-next-btn { right: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-wrap">
+    <!-- HEADER -->
+    <header class="header-bar">
+      <div class="brand-group">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span id="txt-status">Visita 100% Ejecutada • 8 Días Inolvidables 💛 🌼</span>
+        </div>
+        <h1 class="main-title" id="txt-main-title">Inés en Dubái — Diario de Recuerdos 💛 🌼</h1>
+        <p class="main-subtitle" id="txt-main-sub">Del 12 al 20 de Septiembre de 2026 • 37 Momentos Reconciliados • Base Marina Gate 2 💛 🌼</p>
+      </div>
+
+      <div class="header-actions">
+        <button class="control-btn" id="lang-toggle-btn" onclick="toggleLanguage()">
+          <span id="txt-lang-flag">🇬🇧</span>
+          <span id="txt-lang-label">View in English</span>
+        </button>
+        <button class="control-btn" id="theme-toggle-btn" onclick="toggleTheme()">
+          <span id="txt-theme-icon">🌙</span>
+          <span id="txt-theme-label">Modo Oscuro</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- METRICS -->
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-num">8</div>
+        <div class="metric-label" id="txt-metric-days">Días en Dubái</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">44</div>
+        <div class="metric-label" id="txt-metric-photos">Fotos Curadas</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">13</div>
+        <div class="metric-label" id="txt-metric-venues">Lugares Emblemáticos</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">11</div>
+        <div class="metric-label" id="txt-metric-awards">Premios del Viaje</div>
+      </div>
+    </div>
+
+    <!-- STICKY NAV TABS -->
+    <div class="nav-track-wrap">
+      <nav class="nav-tabs" id="main-nav">
+        <button class="nav-tab-btn active" onclick="switchNavTab('gallery')">
+          <span>📸</span> <span id="nav-lbl-gallery">Galería de Momentos</span>
+        </button>
+        <button class="nav-tab-btn" onclick="switchNavTab('days')">
+          <span>📖</span> <span id="nav-lbl-days">Diario Día a Día</span>
+        </button>
+        <button class="nav-tab-btn" onclick="switchNavTab('schedule')">
+          <span>📅</span> <span id="nav-lbl-schedule">Plan y Cronograma</span>
+        </button>
+        <button class="nav-tab-btn" onclick="switchNavTab('venues')">
+          <span>📍</span> <span id="nav-lbl-venues">Lugares Visitados</span>
+        </button>
+        <button class="nav-tab-btn" onclick="switchNavTab('awards')">
+          <span>🏆</span> <span id="nav-lbl-awards">Premios del Viaje</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- TAB 1: GALLERY -->
+    <section class="tab-pane active" id="pane-gallery">
+      <div class="filter-chips">
+        <button class="chip-btn active" onclick="filterGallery('all')" id="chip-all">Todas (44)</button>
+        <button class="chip-btn fav-chip" onclick="filterGallery('favs')" id="chip-favs">⭐ Favoritas de Alfonso (3)</button>
+        <button class="chip-btn" onclick="filterGallery('skyline')" id="chip-skyline">Skyline & Balcón</button>
+        <button class="chip-btn" onclick="filterGallery('desert')" id="chip-desert">Desierto & Dunas</button>
+        <button class="chip-btn" onclick="filterGallery('beach')" id="chip-beach">Playas & Relax</button>
+        <button class="chip-btn" onclick="filterGallery('dining')" id="chip-dining">Gastronomía & Cafés</button>
+        <button class="chip-btn" onclick="filterGallery('active')" id="chip-active">Aventura & Deporte</button>
+      </div>
+
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- TAB 2: DAY JOURNAL -->
+    <section class="tab-pane" id="pane-days">
+      <div class="day-selector-track" id="day-pills-bar">
+        <!-- Injected by JS -->
+      </div>
+      <div id="days-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- TAB 3: SCHEDULE PLAN (REVAMPED) -->
+    <section class="tab-pane" id="pane-schedule">
+      <div class="schedule-intro">
+        <span>✨</span>
+        <span id="txt-schedule-intro">Plan estructurado por fases del día (mañana, tarde y noche) vivido en cada jornada del viaje, sin horarios rígidos de minutos pero con máxima fidelidad a lo acontecido.</span>
+      </div>
+      <div class="schedule-plans-grid" id="schedule-plans-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- TAB 4: VENUES -->
+    <section class="tab-pane" id="pane-venues">
+      <div class="venues-grid" id="venues-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- TAB 5: AWARDS -->
+    <section class="tab-pane" id="pane-awards">
+      <div class="awards-grid" id="awards-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="margin-top: 50px; margin-bottom: 30px; text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem;">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">💛 🌼 💛</div>
+      <p style="font-weight: 600; color: var(--text-main);" id="txt-footer-note">¡Recuerdos imborrables en Dubái y Abu Dabi · Con todo el cariño! 💛 🌼</p>
+      <p style="font-size: 0.8rem; color: var(--text-subtle); margin-top: 4px;">Marina Gate 2, Unit 1107 • Septiembre 2026</p>
+    </footer>
+
+  </div> <!-- /app-wrap -->
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox-backdrop" id="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-nav-btn lightbox-prev-btn" onclick="prevLightboxPhoto()">&#10094;</button>
+      <button class="lightbox-nav-btn lightbox-next-btn" onclick="nextLightboxPhoto()">&#10095;</button>
+
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+
+      <div class="lightbox-details">
+        <div class="lightbox-caption-text" id="lightbox-caption"></div>
+        <div class="lightbox-meta-text">
+          <span id="lightbox-day-lbl"></span> • <span id="lightbox-time-lbl"></span> • <span id="lightbox-idx-lbl"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Embedded Manifests
+    const PHOTOS = [{"day": 1, "date_es": "12 Sep", "date_en": "Sep 12", "time": "00:35", "file": "IMG_5885_welcome_panini_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "⭐ Bienvenida en DXB T3: Recibiendo a Inés con una rosa y el cartel 'Panini 🐒 💛'", "caption_en": "⭐ DXB T3 Welcome: Welcoming Inés with a fresh rose and the 'Panini 🐒 💛' sign", "location": "DXB Terminal 3 Arrivals"}, {"day": 1, "date_es": "12 Sep", "date_en": "Sep 12", "time": "14:32", "file": "IMG_5888_web.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "Paseo por Dubai Internet City, visita a las oficinas de Samsung y watermelon juice fresco", "caption_en": "Stroll through Dubai Internet City, visiting Samsung offices and fresh watermelon juice", "location": "Dubai Internet City"}, {"day": 1, "date_es": "12 Sep", "date_en": "Sep 12", "time": "20:36", "file": "IMG_5893_web.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "Vistas a Marina Gate 2, paseo con vista al canal de yates y primera tarde juntos", "caption_en": "Marina Gate 2 views, promenade stroll by the yacht canal and first evening together", "location": "Dubai Marina Promenade"}, {"day": 1, "date_es": "12 Sep", "date_en": "Sep 12", "time": "22:18", "file": "IMG_5901_web.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Cena de bienvenida en Pier 7 - Asia Asia. Celebrando el inicio del viaje", "caption_en": "Welcome dinner & celebratory drinks at Pier 7 - Asia Asia overlooking the marina waters", "location": "Pier 7 (Asia Asia), Dubai Marina"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "16:12", "file": "IMG_5930.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "⭐ Favorita de Alfonso: Primer contacto con las arenas rojas del desierto árabe", "caption_en": "⭐ Alfonso's Favorite: First footprints in the golden sands of the Arabian desert", "location": "Al Qudra Dunes"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "16:12", "file": "IMG_5947.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Alfon descubriendo su nueva mascota: conociendo el halcón del desierto de Dubái", "caption_en": "Alfon discovering his new pet: meeting the desert falcon in the dunes", "location": "Al Qudra Desert"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "16:35", "file": "IMG_5914_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Aventura en quad surcando las crestas de arena roja juntos", "caption_en": "Quad biking adventure conquering the red sand ridges together", "location": "Al Qudra Desert Way"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "16:41", "file": "IMG_5978_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Dunas infinitas de Al Qudra y paseo en camello juntos por la arena", "caption_en": "Endless Al Qudra dunes and camel ride together across the desert", "location": "Al Qudra Desert Camp"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "17:27", "file": "IMG_6047_web.jpg", "is_fav": true, "is_gold": false, "cats": ["desert", "favs"], "caption_es": "Sandboarding al atardecer: Master class de Inés sobre las dunas doradas", "caption_en": "Sunset sandboarding: Inés' master class gliding down the golden dunes", "location": "Bab Al Shams Dunes"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "17:31", "file": "IMG_6068_web.jpg", "is_fav": true, "is_gold": false, "cats": ["desert", "favs"], "caption_es": "Paz y silencio infinito mientras el sol se oculta tras las dunas árabes", "caption_en": "Serene silence and peace as the sun sets behind the Arabian dunes", "location": "Bab Al Shams Dunes"}, {"day": 2, "date_es": "13 Sep", "date_en": "Sep 13", "time": "19:02", "file": "IMG_6077_web.jpg", "is_fav": true, "is_gold": true, "cats": ["dining", "favs"], "caption_es": "🌟 TOP FAVORITA: Campamento beduino, cena barbacoa bajo las estrellas y show del fuego", "caption_en": "🌟 TOP FAVORITE: Bedouin camp BBQ dinner under the stars & fire show spectacle", "location": "Al Hadheerah, Bab Al Shams"}, {"day": 3, "date_es": "14 Sep", "date_en": "Sep 14", "time": "10:30", "file": "IMG_6084_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Entrenamiento matutino en el gimnasio pre turisteo", "caption_en": "Morning gym workout session before exploring the city", "location": "Address Downtown Fitness"}, {"day": 3, "date_es": "14 Sep", "date_en": "Sep 14", "time": "14:24", "file": "IMG_6099_web.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "Piscina panorámica de Address Downtown con vistas directas al Burj Khalifa", "caption_en": "Panoramic Address Downtown pool with direct view of Burj Khalifa", "location": "Address Downtown Pool"}, {"day": 3, "date_es": "14 Sep", "date_en": "Sep 14", "time": "16:42", "file": "IMG_6111.jpg", "is_fav": false, "is_gold": false, "cats": ["dining"], "caption_es": "Descansito con café de especialidad y paliza de Inés al Dobble", "caption_en": "Specialty coffee break and Inés crushing it at Dobble", "location": "Downtown Dubai"}, {"day": 3, "date_es": "14 Sep", "date_en": "Sep 14", "time": "19:07", "file": "IMG_6126.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Espectáculo de las fuentes con Whitney Houston 'I Will Always Love You'", "caption_en": "The Dubai Fountain show choreographed to Whitney Houston 'I Will Always Love You'", "location": "The Dubai Fountain"}, {"day": 3, "date_es": "14 Sep", "date_en": "Sep 14", "time": "20:37", "file": "IMG_6144.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Paseo relajado por el interior de Dubai Mall", "caption_en": "Relaxed evening walk through Dubai Mall", "location": "Dubai Mall"}, {"day": 3, "date_es": "14 Sep", "date_en": "Sep 14", "time": "20:40", "file": "IMG_6145_web.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "Paseo nocturno explorando Chinatown en Dubai Mall", "caption_en": "Evening stroll exploring Chinatown at Dubai Mall", "location": "Chinatown, Dubai Mall"}, {"day": 4, "date_es": "15 Sep", "date_en": "Sep 15", "time": "08:30", "file": "IMG_6148.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Carrera matutina de 6 km por el paseo marítimo de Palm Jumeirah", "caption_en": "Morning 6km run along the Palm Jumeirah waterfront promenade", "location": "Palm Jumeirah Boardwalk"}, {"day": 4, "date_es": "15 Sep", "date_en": "Sep 15", "time": "14:19", "file": "IMG_6158.jpg", "is_fav": true, "is_gold": false, "cats": ["beach", "favs"], "caption_es": "Supervivencia en The Retreat Palm: Mar turquesa tras la carrera a pleno sol", "caption_en": "Survival at The Retreat Palm: Turquoise beach recharge after the run in the midday sun", "location": "The Retreat Palm Dubai MGallery"}, {"day": 4, "date_es": "15 Sep", "date_en": "Sep 15", "time": "16:44", "file": "IMG_6166_web.jpg", "is_fav": true, "is_gold": false, "cats": ["beach", "favs"], "caption_es": "Piscina relajante en The Retreat y partida épica de 7 Wonders, victoria de Inés", "caption_en": "Relaxing infinity pool at The Retreat & epic 7 Wonders board game, Inés victory", "location": "The Retreat Palm Dubai"}, {"day": 4, "date_es": "15 Sep", "date_en": "Sep 15", "time": "20:00", "file": "IMG_6168_web.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Pizza deliciosa y 'el mejor açaí del mundo' en Kite Beach", "caption_en": "Delicious pizza and 'the best açaí in the world' at Kite Beach", "location": "Kite Beach, Dubai"}, {"day": 4, "date_es": "15 Sep", "date_en": "Sep 15", "time": "22:30", "file": "IMG_6173_web.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "Llegada a casita y a descansar con la rubita", "caption_en": "Heading back home and relaxing together with my favorite blondie", "location": "Marina Gate 2, Unit 1107"}, {"day": 5, "date_es": "16 Sep", "date_en": "Sep 16", "time": "13:30", "file": "IMG_6175_web.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Paseo mañanero y pasta riquísima pre workout", "caption_en": "Morning stroll and delicious pasta fueling up pre-workout", "location": "Dubai Marina Promenade"}, {"day": 5, "date_es": "16 Sep", "date_en": "Sep 16", "time": "16:30", "file": "IMG_6185_alioth_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "⭐ Sesión dura de CrossFit en pareja en CrossFit Alioth (Al Quoz)", "caption_en": "⭐ Tough couple's CrossFit workout at CrossFit Alioth (Al Quoz)", "location": "CrossFit Alioth, Al Quoz"}, {"day": 5, "date_es": "16 Sep", "date_en": "Sep 16", "time": "19:45", "file": "IMG_6194_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Intento de pino con las vistas espectaculares a la ciudad desde Creek Harbour", "caption_en": "Handstand attempt with stunning skyline views from Dubai Creek Harbour", "location": "Dubai Creek Harbour Promenade"}, {"day": 5, "date_es": "16 Sep", "date_en": "Sep 16", "time": "20:06", "file": "IMG_6203.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "The Viewing Point & Escultura Floral en Dubai Creek Harbour que le encantó a Inés", "caption_en": "The Viewing Point & Floral Sculpture at Dubai Creek Harbour that Inés fell in love with", "location": "Dubai Creek Harbour"}, {"day": 5, "date_es": "16 Sep", "date_en": "Sep 16", "time": "21:24", "file": "IMG_6206.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Paseo nocturno explorando los zocos tradicionales de Deira y las luces del Creek", "caption_en": "Night stroll exploring traditional Deira souks and the Creek waterside lights", "location": "Old Dubai & Spice Souk"}, {"day": 5, "date_es": "16 Sep", "date_en": "Sep 16", "time": "22:30", "file": "IMG_6208_web.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Cenita en el kebab de los famosos, el más antiguo de Dubái", "caption_en": "Dinner at Dubai's iconic celebrity kebab, the oldest in town (Special Ostadi)", "location": "Al Ustad Special Kabab, Meena Bazaar"}, {"day": 6, "date_es": "17 Sep", "date_en": "Sep 17", "time": "14:00", "file": "IMG_6211_web.jpg", "is_fav": true, "is_gold": false, "cats": ["beach", "favs"], "caption_es": "Llegada al St. Regis en Abu Dhabi, camino al beach club", "caption_en": "Arriving at The St. Regis Abu Dhabi, heading straight to the beach club", "location": "The St. Regis Abu Dhabi, Corniche"}, {"day": 6, "date_es": "17 Sep", "date_en": "Sep 17", "time": "16:55", "file": "IMG_6245.jpg", "is_fav": true, "is_gold": true, "cats": ["beach", "favs"], "caption_es": "🌟 TOP FAVORITA: The St. Regis Abu Dhabi Beach Club frente a las aguas turquesas", "caption_en": "🌟 TOP FAVORITE: The St. Regis Abu Dhabi Beach Club overlooking turquoise waters", "location": "The St. Regis Abu Dhabi / Nation Riviera"}, {"day": 6, "date_es": "17 Sep", "date_en": "Sep 17", "time": "18:07", "file": "IMG_6253.jpg", "is_fav": true, "is_gold": true, "cats": ["beach", "favs"], "caption_es": "Tarde perfecta en la playa privada de The St. Regis Abu Dhabi Beach Club", "caption_en": "Afternoon relaxation on the private beach of The St. Regis Abu Dhabi Beach Club", "location": "The St. Regis Abu Dhabi / Nation Riviera"}, {"day": 6, "date_es": "17 Sep", "date_en": "Sep 17", "time": "18:15", "file": "IMG_6264_web.jpg", "is_fav": true, "is_gold": false, "cats": ["beach", "favs"], "caption_es": "Expedición a recogida de conchas por la playa de St. Regis", "caption_en": "Shell-hunting expedition along the private St. Regis beach", "location": "The St. Regis Abu Dhabi Beach Club"}, {"day": 6, "date_es": "17 Sep", "date_en": "Sep 17", "time": "18:45", "file": "IMG_6266_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Entrenamiento en pareja en el gimnasio de St. Regis y video-felicitación a Paula", "caption_en": "Couple's strength workout at St. Regis Fitness Suite & birthday video greeting for Paula", "location": "The St. Regis Abu Dhabi Fitness Suite"}, {"day": 7, "date_es": "18 Sep", "date_en": "Sep 18", "time": "10:59", "file": "IMG_6275.jpg", "is_fav": true, "is_gold": false, "cats": ["beach", "favs"], "caption_es": "Salida del hotel en Abu Dhabi listos para una jornada de playa y cultura", "caption_en": "Stepping out from the Abu Dhabi hotel ready for beach and culture", "location": "The St. Regis Abu Dhabi"}, {"day": 7, "date_es": "18 Sep", "date_en": "Sep 18", "time": "13:39", "file": "IMG_6297.jpg", "is_fav": true, "is_gold": false, "cats": ["beach", "favs"], "caption_es": "Nation Riviera Beach Club: Paddle board en el mar, risas perdiendo las gafas Armani y relax total pre mezquita", "caption_en": "Nation Riviera Beach Club: Paddle boarding, laughing off the lost Armani sunglasses & pre-mosque relaxation", "location": "Nation Riviera Beach Club, Abu Dhabi"}, {"day": 7, "date_es": "18 Sep", "date_en": "Sep 18", "time": "19:36", "file": "IMG_6339.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Llegada a la Gran Mezquita Sheikh Zayed durante el atardecer dorado", "caption_en": "Arrival at Sheikh Zayed Grand Mosque during golden sunset hour", "location": "Sheikh Zayed Grand Mosque"}, {"day": 7, "date_es": "18 Sep", "date_en": "Sep 18", "time": "19:44", "file": "IMG_6348.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "La lámpara más bonita de la historia que le fascinó a Inés y columnatas de mármol blanco en la Gran Mezquita", "caption_en": "The most beautiful chandelier in history that enchanted Inés & white marble colonnades at the Grand Mosque", "location": "Sheikh Zayed Grand Mosque Colonnades"}, {"day": 7, "date_es": "18 Sep", "date_en": "Sep 18", "time": "20:07", "file": "IMG_6384.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Cúpulas iluminadas al anochecer en la monumental Gran Mezquita", "caption_en": "Illuminated monumental domes at nightfall at Sheikh Zayed Grand Mosque", "location": "Sheikh Zayed Grand Mosque"}, {"day": 8, "date_es": "19 Sep", "date_en": "Sep 19", "time": "13:58", "file": "IMG_6427.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Saliendo a disfrutar al máximo del último día: Café en Dubai Marina y felicitación de cumpleaños a Javichu", "caption_en": "Heading out to make the most of the final day: Dubai Marina coffee & birthday greeting to Javichu", "location": "Marina Gate 2 Promenade"}, {"day": 8, "date_es": "19 Sep", "date_en": "Sep 19", "time": "14:19", "file": "IMG_6437.jpg", "is_fav": true, "is_gold": false, "cats": ["skyline", "favs"], "caption_es": "Paseo hacia Bluewaters Island contemplando el monumental Ain Dubai", "caption_en": "Stroll towards Bluewaters Island gazing at the monumental Ain Dubai", "location": "Bluewaters Footbridge"}, {"day": 8, "date_es": "19 Sep", "date_en": "Sep 19", "time": "15:41", "file": "IMG_6448.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Comidita en The Spaniel, riquísimo, y açaí en DRVN by Porsche, ¡aún más rico!", "caption_en": "Lunch at The Spaniel, delicious, and fresh açaí at DRVN by Porsche, even tastier!", "location": "DRVN by Porsche, Bluewaters"}, {"day": 8, "date_es": "19 Sep", "date_en": "Sep 19", "time": "17:30", "file": "IMG_6468_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Entrenamiento en las barras de calistenia de Marina Gate antes de la cena de despedida", "caption_en": "Sunset couple's calisthenics workout at Marina Gate outdoor fitness before farewell dinner", "location": "Marina Gate Outdoor Fitness, Dubai Marina"}, {"day": 8, "date_es": "19 Sep", "date_en": "Sep 19", "time": "20:08", "file": "IMG_6461.jpg", "is_fav": true, "is_gold": false, "cats": ["dining", "favs"], "caption_es": "Última llegada a casa en Marina Gate tras la cena y paseo de despedida el sábado noche", "caption_en": "Arrival back home at Marina Gate after farewell dinner and final night walk", "location": "Dubai Marina Promenade"}, {"day": 9, "date_es": "20 Sep", "date_en": "Sep 20", "time": "05:15", "file": "IMG_6467_web.jpg", "is_fav": true, "is_gold": false, "cats": ["active", "favs"], "caption_es": "Amanecer en DXB Terminal 3: Vuelo EK141 de regreso a Madrid y despedida", "caption_en": "Sunrise at DXB Terminal 3: Flight EK141 back to Madrid and heartfelt farewell", "location": "Dubai International Airport (DXB T3)"}];
+    const DAYS_DATA = [{"day": 1, "date_es": "Sábado, 12 de Septiembre, 2026", "date_en": "Saturday, September 12, 2026", "title_es": "Día 0-1: Llegada a Dubái, Directo a 1107 y Primer Día en Marina 💛 🌼", "title_en": "Day 0-1: Touchdown in Dubai, Straight to 1107 & First Day in Marina 💛 🌼", "tag_es": "Día 0-1 · Recogida nocturna, descanso en 1107 y bienvenida", "tag_en": "Day 0-1 · Night pickup, deep sleep at 1107 & welcome", "badge_color": "blue", "summary_es": "El reencuentro más esperado: Alfonso esperando a Inés en la terminal de llegadas de DXB T3 con gafas de sol, una rosa fresca y el cartel 'Panini 🐒 💛' iluminado. Emoción, risas, abrazo de bienvenida y traslado directo a Marina Gate 2 (Unidad 1107) en el Kia para dormir y descansar profundamente hasta el día siguiente tras el viaje. Tras reponer energías al 100%: despertar tranquilo, café de bienvenida en el balcón de la planta 11 admirando el canal de yates, paseo por Dubai Internet City y las oficinas de Samsung con zumo de sandía fresco, y primera tarde juntos paseando por Dubai Marina Walk, coronada con cena de bienvenida en Pier 7 (Asia Asia) con vistas panorámicas sobre el agua.", "summary_en": "The most heartwarming reunion: Alfonso waiting for Inés at DXB T3 Arrivals with sunglasses, a fresh red rose, and the illuminated 'Panini 🐒 💛' iPad sign. Pure joy, laughs, a warm welcome embrace, and straight to Marina Gate 2 (Unit 1107) in the Kia to sleep and rest deeply until the following day. Fully recharged: gentle awakening, welcome coffee on the 11th-floor balcony taking in the yacht basin, stroll through Dubai Internet City visiting Samsung offices with fresh watermelon juice, and an evening promenade along Dubai Marina Walk followed by a celebratory welcome dinner at Pier 7 (Asia Asia) with 360-degree water views.", "highlights_es": ["Bienvenida inolvidable en DXB T3 con una rosa y el cartel 'Panini 🐒 💛'", "Recogida en el Kia, llegada directa a Marina Gate 2 (1107) y descanso profundo", "Café de bienvenida en el balcón de la planta 11 frente al canal de yates", "Paseo por Dubai Internet City, oficinas de Samsung y watermelon juice fresco", "Paseo al atardecer por Marina Walk y cena de bienvenida en Pier 7 (Asia Asia)"], "highlights_en": ["Unforgettable welcome at DXB T3 with a fresh rose and the 'Panini 🐒 💛' sign", "Direct pickup in the Kia straight to Marina Gate 2 (1107) and deep sleep", "Welcome coffee on the 11th-floor balcony overlooking the yacht canal", "Stroll in Dubai Internet City, Samsung offices & fresh watermelon juice", "Sunset stroll along Marina Walk and celebratory welcome dinner at Pier 7 (Asia Asia)"], "schedule_plan_es": {"morning": "00:35 Bienvenida en DXB T3 con el cartel 'Panini 🐒 💛' y una rosa. Conducción directa en el Kia a Marina Gate 2 (1107) y a dormir hasta el día siguiente.", "afternoon": "Despertar reparador, café en el balcón frente a los yates, paseo por Internet City y visita a Samsung con zumo de sandía.", "evening": "Paseo relajado por el canal de Marina Walk y cena de bienvenida con copas de celebración en Pier 7 (Asia Asia)."}, "schedule_plan_en": {"morning": "00:35 Welcome at DXB T3 with the 'Panini 🐒 💛' sign and a rose. Direct drive in the Kia to Marina Gate 2 (1107) and deep sleep until the following day.", "afternoon": "Gentle wake-up, balcony coffee overlooking yachts, stroll through Internet City and Samsung visit with watermelon juice.", "evening": "Sunset stroll along Marina Walk and celebratory welcome dinner at Pier 7 (Asia Asia)."}, "venues": [{"name": "Dubai International Airport (DXB)", "map": "https://maps.google.com/?q=Dubai+International+Airport"}, {"name": "Marina Gate 2, Dubai Marina", "map": "https://maps.google.com/?q=Marina+Gate+2+Dubai"}, {"name": "Dubai Internet City", "map": "https://maps.google.com/?q=Dubai+Internet+City"}, {"name": "Pier 7 (Asia Asia)", "map": "https://maps.google.com/?q=Pier+7+Dubai+Marina"}], "vibe_es": "Reencuentro cálido, skyline eléctrico, brisa templada y emoción de inaugurar el viaje.", "vibe_en": "Warm reunion, electric skyline, balmy evening breeze and the thrill of kicking off the trip."}, {"day": 2, "date_es": "Domingo, 13 de Septiembre, 2026", "date_en": "Sunday, September 13, 2026", "title_es": "Safari en el Desierto, Bab Al Shams, Sandboarding y Cena Beduina", "title_en": "Desert Safari, Bab Al Shams, Sandboarding & Bedouin BBQ", "tag_es": "Aventura Extrema y Atardecer Dorado", "tag_en": "High-Adrenaline Dunes & Desert Sunset", "badge_color": "orange", "summary_es": "Día cargado de adrenalina y magia desértica. Mañana tranquila descansando en Marina Gate 2. A las 14:00, recogida en vehículo safari con destino al desierto de Al Qudra. Primer contacto con las arenas rojas y Alfonso conociendo a su nueva 'mascota', el halcón del desierto. Sesión emocionante de quads autoconducidos por las dunas rojas, el legendario paseo en camello 'súper largo' (broma ya icónica del viaje) y master class de sandboarding con Inés dominando las crestas de arena al atardecer. Hora dorada inolvidable en las dunas de Bab Al Shams y traslado a campamento beduino tradicional para disfrutar de una cena BBQ a la brasa bajo las estrellas con espectáculo de fuego en vivo.", "summary_en": "High-octane adrenaline meets timeless desert silence. Relaxed morning at Marina Gate 2. At 14:00, safari pickup towards the red dunes of Al Qudra. First footprints in the golden desert sands and Alfon meeting his new desert pet: the falcon. Thrilling self-drive quad biking over the ridges, the legendary 'super long' camel trek, and sunset sandboarding master class with Inés gliding down the slopes. Unforgettable golden hour sunset over the Bab Al Shams dunes, followed by an authentic open-air Bedouin camp feast with charcoal BBQ and live fire show under the Arabian stars.", "highlights_es": ["Primer contacto con las arenas rojas de Al Qudra y Alfon descubriendo el halcón", "Aventura en quads autoconducidos surcando las crestas de arena juntos", "Dunas infinitas y el emblemático paseo en camello 'súper largo'", "Sandboarding al atardecer: ¡Master class de Inés sobre las dunas doradas!", "Atardecer de postal en Bab Al Shams y cena beduina con show de fuego"], "highlights_en": ["First footsteps on Al Qudra red sands & Alfon discovering his desert falcon pet", "Self-drive quad biking adventure conquering the sand ridges together", "Endless desert dunes and the iconic 'super long' camel ride", "Sunset sandboarding: Inés' master class gliding down the golden dunes!", "Postcard golden hour at Bab Al Shams & Bedouin BBQ feast with live fire show"], "schedule_plan_es": {"morning": "Despertar relajado en Marina Gate 2, café con vistas al canal y descanso matinal.", "afternoon": "14:00 Recogida safari. Llegada a Al Qudra, quads por las dunas, paseo en camello y sandboarding al atardecer.", "evening": "Hora dorada mágica en Bab Al Shams. Cena barbacoa árabe en campamento beduino bajo las estrellas y show de fuego."}, "schedule_plan_en": {"morning": "Leisurely morning awakening at Marina Gate 2, balcony coffee and resting up.", "afternoon": "14:00 Desert safari pickup. Al Qudra arrival, quad riding, camel trek and sunset sandboarding.", "evening": "Magical golden hour at Bab Al Shams. Arabian BBQ dinner at Bedouin camp under the stars with live fire show."}, "venues": [{"name": "Desierto de Al Qudra", "map": "https://maps.google.com/?q=Al+Qudra+Desert+Dubai"}, {"name": "Bab Al Shams Desert Resort", "map": "https://maps.google.com/?q=Bab+Al+Shams+Desert+Resort"}, {"name": "Campamento Beduino Tradicional", "map": "https://maps.google.com/?q=Dubai+Desert+Safari+Camp"}], "vibe_es": "Adrenalina pura, risas compartidas, arena dorada y el silencio místico del desierto.", "vibe_en": "Pure adrenaline, roaring engines, golden sand and mystical desert silence."}, {"day": 3, "date_es": "Lunes, 14 de Septiembre, 2026", "date_en": "Monday, September 14, 2026", "title_es": "Entrenamiento Matutino, Piscina en Address Downtown, Dobble, Burj Khalifa y Fuentes", "title_en": "Morning Workout, Address Downtown Pool, Dobble, Burj Khalifa & Fountains", "tag_es": "Fitness, Lujo Cosmopolita y Paliza al Dobble", "tag_en": "Fitness, Cosmopolitan Luxury & Dobble Showdown", "badge_color": "purple", "summary_es": "Día completísimo y lleno de momentos especiales en el corazón de Dubái. Arrancamos con un entrenamiento matutino en el gimnasio para empezar el día activos y cargados de energía pre-turisteo. Traslado en el Kia hacia Downtown para disfrutar de una sesión de piscina de ensueño en el exclusivo Address Downtown, con cócteles y relax mientras el colosal Burj Khalifa de 828 metros se alzaba directamente frente a nuestras tumbonas. Después, descansito con café de especialidad y una épica partida de Dobble donde Inés le dio una auténtica paliza a Alfonso entre risas. Hacia el final de la tarde, paseo al lago para vivir el momento cumbre: el espectáculo de las Fuentes de Dubái bailando con 'I Will Always Love You' de Whitney Houston (el favorito de Inés). Cerramos la noche explorando las galerías de Dubai Mall y descubriendo Chinatown.", "summary_en": "A packed and unforgettable day in the beating heart of Dubai. Started strong with an energetic morning gym workout session getting active pre-sightseeing. Drove the Kia to Downtown for a luxury poolside session at Address Downtown, basking in the sun with the colossal 828-meter Burj Khalifa soaring right in front of our loungers. Afterwards, a specialty coffee break and an epic game of Dobble where Inés completely crushed Alfonso! In late afternoon, strolled to Burj Khalifa Lake for the trip's crowning musical moment: the Dubai Fountain show dancing to Whitney Houston's 'I Will Always Love You' (Inés's all-time favorite). Finished the night strolling Dubai Mall and discovering Chinatown.", "highlights_es": ["Entrenamiento matutino en el gimnasio para empezar el día a tope de energía pre-turisteo", "Piscina infinity panorámica de Address Downtown con vistas frontales al Burj Khalifa", "Descansito con café de especialidad y épica paliza de Inés a Alfonso al Dobble", "Show de las Fuentes Danzantes al compás de Whitney Houston ('I Will Always Love You')", "Paseo nocturno explorando Chinatown y las galerías de The Dubai Mall"], "highlights_en": ["Morning gym workout session getting fully energized pre-sightseeing", "Address Downtown panoramic pool with front-row Burj Khalifa views", "Specialty coffee break and Inés's triumphant Dobble victory over Alfonso", "Dubai Fountain show dancing to Whitney Houston's 'I Will Always Love You'", "Night stroll exploring Chinatown and the grand promenades of Dubai Mall"], "schedule_plan_es": {"morning": "Entrenamiento matutino en el gimnasio pre-turisteo, ducha revitalizante y conducción hacia Downtown en el Kia.", "afternoon": "Piscina panorámica en Address Downtown frente al Burj Khalifa, seguida de café de especialidad y paliza de Inés al Dobble.", "evening": "Paseo hacia el lago, show de las fuentes con Whitney Houston, descubrimiento de Chinatown en Dubai Mall y cena."}, "schedule_plan_en": {"morning": "Morning gym workout session pre-sightseeing, refreshing shower and drive to Downtown in the Kia.", "afternoon": "Address Downtown panoramic pool facing Burj Khalifa, followed by specialty coffee and Inés crushing Dobble.", "evening": "Stroll to the lake, fountain show to Whitney Houston, exploring Chinatown at Dubai Mall and dinner."}, "venues": [{"name": "Address Downtown Pool & Gym", "map": "https://maps.google.com/?q=Address+Downtown+Dubai"}, {"name": "Burj Khalifa", "map": "https://maps.google.com/?q=Burj+Khalifa+Dubai"}, {"name": "The Dubai Mall & Dubai Fountain", "map": "https://maps.google.com/?q=The+Dubai+Fountain"}, {"name": "Chinatown, Dubai Mall", "map": "https://maps.google.com/?q=Chinatown+Dubai+Mall"}], "vibe_es": "Energía deportiva, lujo urbano, risas con el Dobble y emoción musical frente a las fuentes.", "vibe_en": "Workout energy, urban glamour, playful Dobble laughs and musical awe by the fountains."}, {"day": 4, "date_es": "Martes, 15 de Septiembre, 2026", "date_en": "Tuesday, September 15, 2026", "title_es": "Carrera 6km en The Palm, The Retreat, Pizza & Açaí en Kite Beach y Vuelta a Casita", "title_en": "Palm 6km Run, The Retreat, Kite Beach Pizza & Açaí & Back Home", "tag_es": "Deporte, Mar, Açaí y Descanso en Pareja", "tag_en": "Running Feat, Beach Bliss, Açaí & Home Comfort", "badge_color": "cyan", "summary_es": "Día redondo aunando superación deportiva, relax en club de playa, cena costera y calor de hogar. Comenzamos a primera hora con una exigente carrera de 6 km a lo largo del paseo marítimo de Palm Jumeirah, desafiando el calor matinal con pura complicidad. A mediodía, acceso con Privilee al club de playa The Retreat Palm Dubai (MGallery): baños en las aguas turquesas del Golfo, piscina infinita y una reñida partida del juego de mesa '7 Wonders' en las tumbonas (¡con gran victoria de Inés!). Al atardecer, traslado a Kite Beach para saborear una deliciosa pizza frente al mar y coronar el festín con 'el mejor açaí del mundo' bajo las estrellas. Para cerrar un día insuperable: vuelta a casita en Marina Gate 2 a descansar abrazados con la rubita.", "summary_en": "A flawless day combining athletic grit, private beach relaxation, coastal dining and cozy home comfort. Kicked off with an intense 6km morning run along the outer Palm Jumeirah boardwalk, conquering the Dubai heat together. Midday at The Retreat Palm Dubai Beach Club via Privilee: swimming in turquoise Gulf waters, relaxing by the infinity pool, and an epic '7 Wonders' board game showdown (Inés claimed the victory!). Sunset at Kite Beach with seaside pizza dinner and 'the best açaí in the world' under the stars. Finished the night returning home to Marina Gate 2 to rest and relax together with my favorite blondie.", "highlights_es": ["Carrera matutina de 6 km por el paseo exterior de Palm Jumeirah superando el calor", "Baño reparador en el mar y piscina en The Retreat Palm Dubai (MGallery) con Privilee", "Victoria épica de Inés en la partida de '7 Wonders' en las tumbonas de la piscina", "Cena deliciosa de pizza y 'el mejor açaí del mundo' en Kite Beach", "Llegada a casita en Marina Gate 2 y a descansar juntos con la rubita"], "highlights_en": ["6km morning endurance run along Palm Jumeirah boardwalk beating the heat", "Refreshing Gulf swim & infinity pool relaxation at The Retreat Palm Dubai", "Inés's triumphant victory in our poolside '7 Wonders' board game battle", "Delicious seaside pizza and 'the best açaí in the world' at Kite Beach", "Heading back home to Marina Gate 2 to rest up together with the blondie"], "schedule_plan_es": {"morning": "Carrera matinal de 6 km por The Palm batiendo el calor y regreso a Marina Gate para ducha y desayuno.", "afternoon": "Playa privada y piscina en The Retreat Palm Dubai con Privilee, descanso al sol y juego '7 Wonders'.", "evening": "Paseo en Kite Beach, cena de pizza, 'el mejor açaí del mundo' y llegada a casita en Marina Gate a descansar con la rubita."}, "schedule_plan_en": {"morning": "6km morning run along The Palm boardwalk, followed by shower and breakfast at Marina Gate.", "afternoon": "Private beach & infinity pool at The Retreat Palm Dubai via Privilee, sunbathing and 7 Wonders game.", "evening": "Kite Beach sunset stroll, pizza dinner, 'best açaí in the world' and returning home to Marina Gate to rest."}, "venues": [{"name": "Palm Jumeirah Boardwalk", "map": "https://maps.google.com/?q=The+Boardwalk+Palm+Jumeirah"}, {"name": "The Retreat Palm Dubai (MGallery)", "map": "https://maps.google.com/?q=The+Retreat+Palm+Dubai"}, {"name": "Kite Beach, Jumeirah", "map": "https://maps.google.com/?q=Kite+Beach+Dubai"}, {"name": "Marina Gate 2 (Unidad 1107)", "map": "https://maps.google.com/?q=Marina+Gate+2+Dubai"}], "vibe_es": "Endorfinas matinales, salitre en la piel, açaí delicioso y paz en casita.", "vibe_en": "Morning endorphins, salty sea breeze, incredible açaí and sweet home comfort."}, {"day": 5, "date_es": "Miércoles, 16 de Septiembre, 2026", "date_en": "Wednesday, September 16, 2026", "title_es": "Paseo & Pasta Pre-Workout, CrossFit Alioth, Pino en Creek Harbour y Kebab de los Famosos", "title_en": "Morning Stroll & Pasta, CrossFit Alioth, Creek Harbour Handstand & Celebrity Kebab", "tag_es": "Carbo-Load, WOD en Pareja, Panorámicas y Cena de Leyenda", "tag_en": "Carb Loading, Couple's WOD, Skyline Feats & Legendary Kebab", "badge_color": "blue", "summary_es": "Una jornada memorable aunando fitness, buen comer y las dos caras de Dubái: su vanguardia y su historia más auténtica. La mañana comenzó con un paseo mañanero relajado y un suculento plato de pasta para cargar hidratos pre-workout. A las 16:30, intensa y motivadora sesión de CrossFit en pareja en CrossFit Alioth (Al Quoz), sudando la camiseta juntos y completando un durísimo WOD con gran complicidad. Tras la ducha, rumbo a Dubai Creek Harbour: divertido intento de pino de Alfonso con el monumental skyline de fondo, paseo por 'The Viewing Point' y admiración de la preciosa escultura floral que fascinó a Inés. Al anochecer, paseo nocturno explorando los zocos tradicionales de Deira y las luces del Creek, culminando con una cenita mítica en el kebab de los famosos, el más antiguo de Dubái (Al Ustad Special Kabab / Special Ostadi).", "summary_en": "An unforgettable day blending fitness, great food, and both faces of Dubai: cutting-edge modernity and historic soul. Started with a relaxed morning stroll and a delicious pasta bowl fueling up pre-workout. At 16:30, high-intensity couple's CrossFit session at CrossFit Alioth in Al Quoz, crushing the WOD together. Post-workout drive to Dubai Creek Harbour: fun handstand attempt with dramatic city skyline views, walking 'The Viewing Point', and admiring the floral sculpture Inés loved. By nightfall, walked through traditional Deira souks and Creek waterfront lights, capped off with legendary dinner at Dubai's oldest celebrity kebab (Al Ustad Special Kabab / Special Ostadi).", "highlights_es": ["Paseo mañanero relajado y pasta riquísima para cargar hidratos pre-workout", "Dura sesión de CrossFit en pareja en CrossFit Alioth (Al Quoz) superando el WOD", "Intento de pino con las vistas espectaculares al skyline de Dubái desde Creek Harbour", "Paseo por The Viewing Point y la escultura floral que le encantó a Inés", "Paseo nocturno por los zocos de Deira y cenita en el kebab de los famosos (Special Ostadi)"], "highlights_en": ["Relaxed morning stroll and delicious pre-workout fuel pasta", "Tough couple's CrossFit training session at CrossFit Alioth (Al Quoz)", "Handstand attempt with spectacular Dubai skyline views from Creek Harbour", "Exploring The Viewing Point and the floral sculpture Inés adored", "Night souk walk in Deira and dinner at Dubai's oldest celebrity kebab (Special Ostadi)"], "schedule_plan_es": {"morning": "Paseo mañanero por Dubai Marina, plato de pasta riquísima para cargar pilas y descanso pre-workout.", "afternoon": "16:30 CrossFit en pareja en CrossFit Alioth. Conducción a Creek Harbour, intento de pino e inspección de The Viewing Point.", "evening": "Paseo nocturno por los zocos tradicionales de Deira y cena mítica en el kebab de los famosos (Al Ustad Special Kabab)."}, "schedule_plan_en": {"morning": "Morning marina stroll, delicious carb-loading pasta and resting up pre-workout.", "afternoon": "16:30 CrossFit session at CrossFit Alioth. Drive to Creek Harbour, handstand attempt & The Viewing Point.", "evening": "Night walk through Deira souks and legendary dinner at Dubai's oldest celebrity kebab (Al Ustad Special Kabab)."}, "venues": [{"name": "CrossFit Alioth, Al Quoz", "map": "https://maps.google.com/?q=CrossFit+Alioth+Dubai"}, {"name": "The Viewing Point @ Dubai Creek Harbour", "map": "https://maps.google.com/?q=The+Viewing+Point+Dubai+Creek+Harbour"}, {"name": "Dubai Creek Waterfront & Souks", "map": "https://maps.google.com/?q=Dubai+Creek+Harbour"}, {"name": "Al Ustad Special Kabab (Special Ostadi)", "map": "https://maps.google.com/?q=Al+Ustad+Special+Kabab"}], "vibe_es": "Esfuerzo compartido, skyline deslumbrante, risas haciendo el pino y sabor auténtico en el kebab más icónico.", "vibe_en": "Shared athletic effort, dazzling skyline, handstand laughs and legendary flavor at Dubai's iconic kebab."}, {"day": 6, "date_es": "Jueves, 17 de Septiembre, 2026", "date_en": "Thursday, September 17, 2026", "title_es": "Staycation en Abu Dabi: St. Regis Beach Club, Conchas, Gym y Felicitación a Paula", "title_en": "Abu Dhabi Staycation: St. Regis Beach Club, Shells, Gym & Paula's Birthday", "tag_es": "Aguas Turquesas (TOP Fav), Recogida de Conchas y Entreno", "tag_en": "Turquoise Waters (TOP Fav), Shells & Birthday Workout", "badge_color": "blue", "summary_es": "Comienzo de nuestra escapada de 2 días a la capital de los Emiratos. Conducción en el Kia por la autopista E11 rumbo sur hacia Abu Dabi y llegada directa al emblemático The St. Regis Abu Dhabi camino a su club de playa. Jornada absoluta de ensueño frente a las aguas azul turquesa del Golfo (momento inmortalizado en la foto TOP favorita de Alfonso con borde dorado). Tarde de sol en la playa privada, seguida de una bonita expedición en pareja recogiendo conchas marinas por la orilla. Antes del anochecer, sesión de entrenamiento de fuerza en pareja en el gimnasio del hotel y grabación en video de la felicitación especial de cumpleaños para Paula entre risas. Cena relajada frente al mar y descanso de staycation en la capital.", "summary_en": "Kicking off our 2-day capital staycation in Abu Dhabi. Highway cruise in the Kia along the E11 south to Abu Dhabi, arriving at The St. Regis Abu Dhabi and heading straight to the beach club. An absolute dream day overlooking pristine turquoise waters (captured in Alfonso's all-time TOP favorite photo with gold border). Relaxed afternoon on the private beach, followed by a romantic shell-hunting expedition along the coastline. Before dusk, couple's strength workout at St. Regis Fitness Suite and recording a special birthday video message for Paula. Seaside dinner and overnight staycation.", "highlights_es": ["Viaje en el Kia hacia Abu Dabi y llegada triunfal al St. Regis camino al beach club", "🌟 Foto TOP Favorita de Alfonso con Borde Dorado frente a las aguas turquesas del Golfo", "Tarde de relax total en la playa privada de The St. Regis Beach Club", "Expedición en pareja a la recogida de conchas marinas por la orilla de la playa", "Entrenamiento de fuerza en el gimnasio de St. Regis y video-felicitación de cumpleaños a Paula"], "highlights_en": ["Scenic Kia highway drive to Abu Dhabi and arriving at The St. Regis beach club", "🌟 Alfonso's TOP favorite gold-border photo overlooking crystal turquoise waters", "Pure afternoon relaxation on the private beach of The St. Regis Beach Club", "Romantic couple's shell-hunting expedition along the beach shoreline", "Strength gym workout at St. Regis Fitness Suite & recording birthday video for Paula"], "schedule_plan_es": {"morning": "Equipaje ligero en Marina Gate 2 y conducción por autopista hacia Abu Dabi en el Kia.", "afternoon": "Llegada al St. Regis directo al beach club, baño en aguas turquesas y recogida de conchas por la playa.", "evening": "Entrenamiento en pareja en el gimnasio, video-felicitación a Paula, cena costera y noche de hotel en Abu Dabi."}, "schedule_plan_en": {"morning": "Packing overnight bags at Marina Gate 2 and cruising the highway to Abu Dhabi in the Kia.", "afternoon": "Arrival at St. Regis heading straight to beach club, turquoise sea swim & shell collecting on the sand.", "evening": "Couple's gym workout, video birthday greeting for Paula, seaside dining & overnight staycation."}, "venues": [{"name": "The St. Regis Abu Dhabi / Nation Riviera", "map": "https://maps.google.com/?q=The+St+Regis+Abu+Dhabi"}, {"name": "St. Regis Fitness Suite", "map": "https://maps.google.com/?q=The+St+Regis+Abu+Dhabi+Fitness"}, {"name": "Abu Dhabi Corniche", "map": "https://maps.google.com/?q=Abu+Dhabi+Corniche"}], "vibe_es": "Aguas turquesas mágicas, aire de staycation, conchas en la arena y complicidad fitness celebrando a Paula.", "vibe_en": "Mesmerizing turquoise waters, staycation bliss, seaside treasures and affectionate birthday celebrations."}, {"day": 7, "date_es": "Viernes, 18 de Septiembre, 2026", "date_en": "Friday, September 18, 2026", "title_es": "Nation Riviera, Paddle Board, Gafas Armani y la Gran Mezquita Sheikh Zayed", "title_en": "Nation Riviera, Paddle Board, Armani Sunglasses & Sheikh Zayed Grand Mosque", "tag_es": "Paddle Board, Anécdota de las Gafas y la Lámpara Más Bonita", "tag_en": "Paddle Boarding, Lost Sunglasses Laughs & Grand Mosque Wonders", "badge_color": "purple", "summary_es": "Día estelar que combinó diversión acuática, anécdotas inolvidables y una de las grandes maravillas del planeta. Salida del hotel en Abu Dabi para disfrutar de una completa jornada en el Nation Riviera Beach Club (The St. Regis): baño, piscina con Privilee y emocionante sesión de paddle board sobre el mar abierto... ¡con la divertidísima anécdota de Alfonso perdiendo sus gafas de sol Armani en las olas entre risas! Tras el relax, pusimos rumbo a la Gran Mezquita Sheikh Zayed en plena hora dorada: patio de mármol blanco reflejado en estanques, columnas florales y el asombro total ante 'la lámpara más bonita de la historia' que fascinó a Inés. Contemplamos las 82 cúpulas iluminadas al anochecer antes de emprender un plácido regreso nocturno en coche a Dubái Marina.", "summary_en": "A stellar day blending water fun, unforgettable laughs, and a world architectural wonder. Stepped out from our Abu Dhabi hotel to Nation Riviera Beach Club (The St. Regis): swimming, poolside relaxation via Privilee, and an exciting open-sea paddle boarding session... complete with Alfonso hilariously losing his Armani sunglasses in the waves! Post-beach relaxation led to the Sheikh Zayed Grand Mosque during golden sunset hour: white Macedonian marble courtyards, floral colonnades reflected in pools, and complete awe before 'the most beautiful chandelier in history' that enchanted Inés. Admired the 82 illuminated domes at dusk before a smooth night drive back to Dubai Marina.", "highlights_es": ["Jornada en Nation Riviera Beach Club (The St. Regis Abu Dhabi) con mar y piscina Privilee", "Sesión de paddle board en mar abierto y risas compartidas perdiendo las gafas Armani", "Llegada a la Gran Mezquita Sheikh Zayed en plena hora dorada del atardecer", "Admiración total ante la lámpara más bonita de la historia que le fascinó a Inés", "Cúpulas iluminadas al anochecer y regreso nocturno en coche a Dubái Marina"], "highlights_en": ["Beach & pool relaxation at Nation Riviera Beach Club (The St. Regis Abu Dhabi) via Privilee", "Open-sea paddle boarding session and laughing off the lost Armani sunglasses in the waves", "Golden sunset hour arrival at the magnificent Sheikh Zayed Grand Mosque", "Awe before the most beautiful chandelier in history that enchanted Inés", "Illuminated grand domes at twilight & smooth highway drive back to Dubai Marina"], "schedule_plan_es": {"morning": "Salida del hotel en Abu Dabi y entrada a Nation Riviera Beach Club en la Corniche.", "afternoon": "Mar, piscina, paddle board, risas con las gafas Armani y relax total pre-mezquita.", "evening": "Visita dorada a la Gran Mezquita Sheikh Zayed, contemplando la lámpara más bonita de la historia y vuelta nocturna a Dubái Marina."}, "schedule_plan_en": {"morning": "Morning hotel checkout in Abu Dhabi and check-in at Nation Riviera Beach Club on the Corniche.", "afternoon": "Sea, pool, paddle boarding, laughing off the lost Armani sunglasses and pre-mosque rest.", "evening": "Golden hour visit to Sheikh Zayed Grand Mosque, admiring the world's most beautiful chandelier and night drive back to Dubai Marina."}, "venues": [{"name": "Nation Riviera Beach Club (St. Regis)", "map": "https://maps.google.com/?q=Nation+Riviera+Beach+Club+Abu+Dhabi"}, {"name": "Gran Mezquita Sheikh Zayed", "map": "https://maps.google.com/?q=Sheikh+Zayed+Grand+Mosque"}, {"name": "Marina Gate 2, Dubai Marina", "map": "https://maps.google.com/?q=Marina+Gate+2+Dubai"}], "vibe_es": "Risas en el paddle board, anécdotas para el recuerdo, lujo playero y sobrecogimiento absoluto ante la Mezquita.", "vibe_en": "Paddle board laughs, cherished anecdotes, beachside luxury and breathless architectural wonder."}, {"day": 8, "date_es": "Sábado, 19 de Septiembre, 2026", "date_en": "Saturday, September 19, 2026", "title_es": "Último Día: Café Marina, Bluewaters, The Spaniel, DRVN by Porsche, Calistenia y Cena", "title_en": "Final Day: Marina Coffee, Bluewaters, The Spaniel, DRVN by Porsche, Calisthenics & Dinner", "tag_es": "Cumple Javichu, Açaí Gourmet, Barras Marina Gate y Cena de Despedida", "tag_en": "Javichu's Birthday, Gourmet Açaí, Outdoor Calisthenics & Farewell Dinner", "badge_color": "orange", "summary_es": "Una jornada perfecta exprimiendo cada segundo del último día juntos en Dubái. Comenzamos saliendo a disfrutar al máximo del día: café de la mañana en Dubai Marina y felicitación efusiva de cumpleaños a Javichu. A mediodía, paseo hacia Bluewaters Island contemplando el monumental Ain Dubai. Comidita exquisita en The Spaniel y merienda de açaí artesano en DRVN by Porsche ('¡aún más rico!'), disfrutando entre vitrinas de legendarios Porsche 911 clásicos. Al atardecer, sesión deportiva en pareja en las barras de calistenia al aire libre de Marina Gate antes de arreglarnos para la Gran Cena de Despedida. Último paseo nocturno junto al canal y regreso a casita en Marina Gate 2, saboreando el viaje con el corazón repleto de felicidad.", "summary_en": "A flawless final full day making the absolute most of every moment together in Dubai. Started heading out to enjoy the final day to the fullest: morning coffee in Dubai Marina and warm birthday celebration wishes to Javichu! Midday stroll towards Bluewaters Island gazing up at the colossal Ain Dubai. Delicious lunch at The Spaniel followed by artisan açaí at DRVN by Porsche ('even tastier!'), surrounded by museum-grade classic Porsche 911s. At sunset, couple's workout at the outdoor calisthenics bars of Marina Gate before getting ready for our Grand Farewell Dinner. Final night walk along the canal and back home to Marina Gate 2 with hearts overflowing with happiness.", "highlights_es": ["Saliendo a disfrutar al máximo del último día: Café en Dubai Marina y felicitación a Javichu", "Paseo hacia Bluewaters Island contemplando el monumental Ain Dubai", "Comidita en The Spaniel y açaí artesanal en DRVN by Porsche, ¡aún más rico!", "Entrenamiento en pareja en las barras de calistenia de Marina Gate al atardecer", "Gran Cena de Despedida y última llegada a casa en Marina Gate tras el paseo nocturno"], "highlights_en": ["Heading out to maximize the final day: Dubai Marina coffee & birthday greeting to Javichu", "Stroll towards Bluewaters Island taking in the monumental Ain Dubai", "Delicious lunch at The Spaniel & artisan açaí at DRVN by Porsche, even tastier!", "Sunset couple's calisthenics workout at Marina Gate outdoor fitness bars", "Grand Farewell Dinner and returning home to Marina Gate after the final night stroll"], "schedule_plan_es": {"morning": "Café en Dubai Marina saliendo a disfrutar del último día y felicitación de cumpleaños a Javichu.", "afternoon": "Paseo a Bluewaters bajo Ain Dubai, comida en The Spaniel y açaí en DRVN by Porsche rodeados de coches clásicos.", "evening": "Entrenamiento en las barras de calistenia de Marina Gate, Gran Cena de Despedida a orillas del canal y última llegada a casa."}, "schedule_plan_en": {"morning": "Morning coffee in Dubai Marina making the most of the final day, and birthday wishes to Javichu.", "afternoon": "Walk to Bluewaters under Ain Dubai, lunch at The Spaniel and artisan açaí at DRVN by Porsche with classic cars.", "evening": "Calisthenics workout at Marina Gate bars, Grand Farewell Dinner along the marina canal and final walk home."}, "venues": [{"name": "Marina Gate 2 & Outdoor Fitness", "map": "https://maps.google.com/?q=Marina+Gate+2+Dubai"}, {"name": "Bluewaters Island & Ain Dubai", "map": "https://maps.google.com/?q=Bluewaters+Island+Dubai"}, {"name": "The Spaniel, Bluewaters", "map": "https://maps.google.com/?q=The+Spaniel+Dubai"}, {"name": "DRVN by Porsche", "map": "https://maps.google.com/?q=DRVN+by+Porsche+Dubai"}, {"name": "Dubai Marina Walk", "map": "https://maps.google.com/?q=Dubai+Marina+Walk"}], "vibe_es": "Exprimir cada minuto, risas compartidas, comida deliciosa, calistenia al atardecer y gratitud infinita por 8 días de ensueño.", "vibe_en": "Living every minute, shared joy, sublime food, sunset calisthenics and profound gratitude for a magical week."}, {"day": 9, "date_es": "Domingo, 20 de Septiembre, 2026", "date_en": "Sunday, September 20, 2026", "title_es": "Amanecer en DXB Terminal 3 y Despedida a Madrid", "title_en": "DXB Terminal 3 Sunrise & Journey Home to Madrid", "tag_es": "Misión Cumplida y Hasta Pronto", "tag_en": "Mission Accomplished & See You Soon", "badge_color": "blue", "summary_es": "El broche de oro de una visita perfecta. Salida de madrugada a las 04:39 AM desde Marina Gate 2 en el Kia rumbo al aeropuerto internacional. Llegada directa al carril de Salidas de la Terminal 3 de DXB frente a las Puertas 3 y 4. Facturación sin colas, último abrazo, despedida con la sonrisa de haber vivido el viaje más completo, intenso y feliz posible en Dubái y Abu Dabi. Despegue a las 07:45 AM en el vuelo EK141 de Emirates rumbo a Madrid Barajas. ¡Hasta muy pronto, Inés! 💛 🌼", "summary_en": "The final chapter of a flawless Dubai chapter. Early morning drive at 04:39 AM from Marina Gate 2 in the Kia towards the airport. Direct pull-up at DXB Terminal 3 Departures lane outside Doors 3/4. Seamless baggage drop, a warm farewell embrace, and hearts full of the most vibrant, complete, and joyful week in Dubai and Abu Dhabi. Emirates flight EK141 departed at 07:45 AM direct to Madrid Barajas. See you very soon, Inés! 💛 🌼", "highlights_es": ["Traslado matinal a las 04:39 AM en el Kia hacia el aeropuerto DXB", "Parada directa en el carril de Salidas de DXB Terminal 3 (Puertas 3 y 4)", "Facturación rápida de equipaje y despedida con sonrisa y misión cumplida", "Despegue del vuelo Emirates EK141 a las 07:45 AM rumbo directo a Madrid", "100% de la visita ejecutada con éxito absoluto y recuerdos para siempre"], "highlights_en": ["Early morning drive at 04:39 AM in the Kia to DXB Airport", "Pulling up directly to DXB Terminal 3 Departures lane (Doors 3/4)", "Seamless check-in, warm farewell hug & mission 100% accomplished", "Emirates flight EK141 takeoff at 07:45 AM direct to Madrid Barajas", "100% of itinerary executed flawlessly with unforgettable memories"], "schedule_plan_es": {"morning": "04:39 AM Salida de Marina Gate 2 en Kia hacia DXB T3. Despedida en puerta 3/4 y vuelo EK141 a las 07:45 AM rumbo a Madrid.", "afternoon": "Aterrizaje en Madrid Barajas (MAD) a las 13:30 con la maleta llena de recuerdos inolvidables de Dubái.", "evening": "Llegada a casa en Madrid, descanso y repaso de las fotos del viaje."}, "schedule_plan_en": {"morning": "04:39 AM Departure from Marina Gate 2 to DXB T3 in Kia. Farewell at Door 3/4 & EK141 takeoff at 07:45 AM to Madrid.", "afternoon": "Landing at Madrid Barajas (MAD) at 13:30 with suitcases full of golden Dubai memories.", "evening": "Home sweet home in Madrid, relaxing and reminiscing through the trip photo album."}, "venues": [{"name": "Marina Gate 2, Dubai Marina", "map": "https://maps.google.com/?q=Marina+Gate+2+Dubai"}, {"name": "DXB Terminal 3 Salidas", "map": "https://maps.google.com/?q=Dubai+Airport+Terminal+3"}, {"name": "Madrid-Barajas (MAD)", "map": "https://maps.google.com/?q=Madrid+Barajas+Airport"}], "vibe_es": "Paz, gratitud inmensa, emoción en el abrazo de despedida y la certeza de que repetiremos pronto.", "vibe_en": "Peace, immense gratitude, warm farewell hugs and the certainty of seeing each other again soon."}];
+    const AWARDS_DATA = [{"id": "aw-01", "icon": "🌹", "category_es": "Bienvenida Inolvidable", "category_en": "Unforgettable Welcome", "title_es": "Bienvenida Más Romántica — Cartel 'Panini 🐒 💛' y Rosa en DXB", "title_en": "Most Romantic Arrival — 'Panini 🐒 💛' Sign & Rose at DXB", "desc_es": "Sorpresa en DXB T3: Alfonso esperando con una rosa roja fresca y el cartel luminoso 'Panini 🐒 💛'.", "desc_en": "DXB T3 surprise: Alfonso waiting with a fresh red rose and glowing 'Panini 🐒 💛' sign.", "photo": "IMG_5885_welcome_panini_web.jpg", "status": "keep", "notes": ""}, {"id": "aw-02", "icon": "🌅", "category_es": "Momento Dorado", "category_en": "Golden Hour", "title_es": "Mejor Golden Hour — Dunas de Bab Al Shams", "title_en": "Best Golden Hour — Bab Al Shams Dunes", "desc_es": "Crestas doradas y cielo naranja ardiente en el desierto infinito.", "desc_en": "Golden crests and fiery orange sky across the infinite desert sands.", "photo": "IMG_6047_web.jpg", "status": "keep", "notes": ""}, {"id": "aw-03", "icon": "☕", "category_es": "Gastro & Cafés", "category_en": "Specialty Dining", "title_es": "Mejor Café & Açaí — DRVN by Porsche Bluewaters", "title_en": "Best Coffee & Açaí — DRVN by Porsche Bluewaters", "desc_es": "Açaí fresco, cold brews de especialidad y superdeportivos clásicos en vitrinas de cristal.", "desc_en": "Fresh açaí bowls, single-origin cold brews, and iconic vintage Porsches.", "photo": "IMG_6448.jpg", "status": "keep", "notes": ""}, {"id": "aw-05", "icon": "🏋️", "category_es": "Fitness Épico", "category_en": "Fitness & Sweat", "title_es": "El Mayor Desafío Físico — CrossFit Alioth (Al Quoz)", "title_en": "Toughest Physical Challenge — CrossFit Alioth (Al Quoz)", "desc_es": "WOD en pareja a alta intensidad en uno de los boxes de referencia de Dubái.", "desc_en": "High-intensity partner WOD pushing limits in Dubai's premier box.", "photo": "IMG_6185_alioth_web.jpg", "status": "keep", "notes": ""}, {"id": "aw-06", "icon": "🏆", "category_es": "Juegos & Competitividad", "category_en": "Victory & Games", "title_es": "La Victoria Más Competida — 7 Wonders en The Retreat", "title_en": "Most Contested Victory — 7 Wonders at The Retreat", "desc_es": "Partida estratégica épica junto a la piscina de The Retreat. Triunfo indiscutible de Inés.", "desc_en": "Epic board game battle by The Retreat pool. Clear and deserved victory for Inés.", "photo": "IMG_6166_web.jpg", "status": "keep", "notes": ""}, {"id": "aw-07", "icon": "🏖️", "category_es": "Relax & Playa", "category_en": "Beach & Chill", "title_es": "El Mejor Día de Playa — The St. Regis Beach Club (Abu Dhabi)", "title_en": "Best Beach Day — The St. Regis Beach Club (Abu Dhabi)", "desc_es": "Aguas turquesas y vistas a la Corniche desde las tumbonas del St. Regis.", "desc_en": "Turquoise waters and Corniche views from the luxury loungers at St. Regis.", "photo": "IMG_6245.jpg", "status": "keep", "notes": ""}, {"id": "aw-08", "icon": "🕌", "category_es": "Cultura & Asombro", "category_en": "Architecture & Awe", "title_es": "La Maravilla Arquitectónica — Gran Mezquita Sheikh Zayed", "title_en": "Architectural Wonder — Sheikh Zayed Grand Mosque", "desc_es": "Mármol blanco de Macedonia, mosaicos florales y 82 cúpulas iluminadas al anochecer.", "desc_en": "Pure white Macedonian marble, intricate floral inlays, and 82 illuminated domes.", "photo": "IMG_6339.jpg", "status": "keep", "notes": ""}, {"id": "aw-10", "icon": "🥩", "category_es": "Gastro & Cena", "category_en": "Gastro Indulgence", "title_es": "El Mejor Capricho Gastro — Cena Beduina y Show del Fuego", "title_en": "Best Gastro Indulgence — Bedouin Feast & Fire Show", "desc_es": "Cordero braseado, panes calientes y espectáculo con fuego bajo el cielo estrellado.", "desc_en": "Slow-roasted lamb, freshly baked bread, and live fire show under the starry sky.", "photo": "IMG_6077_web.jpg", "status": "keep", "notes": ""}, {"id": "aw-11", "icon": "🎂", "category_es": "Amistad a Distancia", "category_en": "Birthday Milestone", "title_es": "Felicitación Más Especial — Cumpleaños de Paula en St. Regis", "title_en": "Most Special Greeting — Paula's Birthday at St. Regis", "desc_es": "Video-felicitación enviada desde Abu Dhabi con vistas a la Corniche tras entrenar en el gym.", "desc_en": "Birthday greeting video sent from Abu Dhabi overlooking the Corniche after workout.", "photo": "IMG_6266_web.jpg", "status": "keep", "notes": ""}, {"id": "aw-12", "icon": "🎉", "category_es": "Familia & Cariño", "category_en": "Birthday Milestone", "title_es": "Felicitación Familiar — Feliz Cumple Javichu", "title_en": "Family Milestone — Happy Birthday Javichu", "desc_es": "Mensaje cariñoso de felicitación a Javichu grabado desde Dubai Marina.", "desc_en": "Warm birthday video greeting to Javichu recorded from Dubai Marina.", "photo": "IMG_6427.jpg", "status": "keep", "notes": ""}, {"id": "aw-13", "icon": "🤸", "category_es": "Calistenia al Atardecer", "category_en": "Sunset Calisthenics", "title_es": "Entrenamiento Calistenia — Barras de Marina Gate", "title_en": "Sunset Calisthenics — Marina Gate Outdoor Bars", "desc_es": "Sesión en pareja en las barras de calistenia de Marina Gate antes de la última noche del viaje.", "desc_en": "Couple's calisthenics workout at Marina Gate outdoor bars before the farewell night.", "photo": "IMG_6468_web.jpg", "status": "keep", "notes": ""}];
+    const VENUES_DATA = [{"area": "Dubai Marina", "name": "Marina Gate 2 (Unidad 1107)", "desc_es": "Nuestra base en Dubái. Balcón en la planta 11 con vistas al canal de yates, piscina infinity y skyline nocturno.", "desc_en": "Our home base in Dubai. 11th-floor balcony overlooking the luxury yacht basin, infinity pool and skyline.", "map": "https://maps.google.com/?q=Marina+Gate+2+Dubai"}, {"area": "Bluewaters Island", "name": "DRVN by Porsche", "desc_es": "Cafetería de especialidad artesanal rodeada de vitrinas con Porsche 911 clásicos impecables y motores de competición.", "desc_en": "Artisan specialty coffee bar surrounded by glass museum cubes showcasing classic Porsche 911s and engines.", "map": "https://maps.google.com/?q=DRVN+by+Porsche+Dubai"}, {"area": "Desierto de Arabia", "name": "Al Qudra y Bab Al Shams", "desc_es": "Las dunas doradas del desierto, quads a fondo, dune bashing en 4x4, paseo en camello y atardecer de ensueño.", "desc_en": "Golden rolling desert dunes, quad riding, 4x4 dune bashing, camel trek and a breathtaking crimson sunset.", "map": "https://maps.google.com/?q=Bab+Al+Shams+Desert+Resort"}, {"area": "Downtown Dubai", "name": "Address Downtown & Burj Khalifa", "desc_es": "Piscina infinity de lujo con vistas frontales al edificio más alto del mundo (828m) y espectáculo de las fuentes.", "desc_en": "Luxury infinity pool with front-row views of the world's tallest building (828m) and fountain lake.", "map": "https://maps.google.com/?q=Address+Downtown+Dubai"}, {"area": "Palm Jumeirah", "name": "The Retreat Palm Dubai (MGallery)", "desc_es": "Club de playa exclusivo en la medialuna este de The Palm con Privilee: baños en mar abierto, piscina y partidas de 7 Wonders.", "desc_en": "Exclusive beach club on the East Crescent via Privilee: open Gulf swimming, chilled pool and 7 Wonders game.", "map": "https://maps.google.com/?q=The+Retreat+Palm+Dubai"}, {"area": "Jumeirah Coast", "name": "Kite Beach", "desc_es": "Arena blanca, brisa del Golfo Arábigo, paseos descalzos al atardecer, cena de pizza y el mejor açaí bajo las estrellas.", "desc_en": "White sands, Arabian Gulf breezes, barefoot sunset strolls, seaside pizza dinner and artisan açaí bowls.", "map": "https://maps.google.com/?q=Kite+Beach+Dubai"}, {"area": "Al Quoz", "name": "CrossFit Alioth", "desc_es": "Box de crossfit de referencia en Al Quoz donde compartimos una intensa y energética sesión de entrenamiento a las 16:30.", "desc_en": "Premier CrossFit training facility in Al Quoz where we tackled a high-energy workout together at 16:30.", "map": "https://maps.google.com/?q=CrossFit+Alioth+Dubai"}, {"area": "Dubai Creek Harbour", "name": "The Viewing Point", "desc_es": "Pasarela voladiza de 70 metros suspendida 26 metros sobre el agua con vistas panorámicas al skyline de Downtown y los flamencos.", "desc_en": "Dramatic 70m cantilevered viewing walkway extending 26m over the Creek with sweeping views of Downtown.", "map": "https://maps.google.com/?q=The+Viewing+Point+Dubai+Creek+Harbour"}, {"area": "Old Dubai", "name": "Al Seef y Zocos Tradicionales de Dubai Creek", "desc_es": "Barrio histórico, callejones de piedra, torres de viento de barro y recorrido nocturno por el histórico Creek y zocos tradicionales de Deira.", "desc_en": "Historic wind-tower alleyways, heritage architecture and the iconic historic Creek waterfront walk and traditional Deira souks.", "map": "https://maps.google.com/?q=Al+Seef+Dubai"}, {"area": "Abu Dhabi Corniche", "name": "Nation Riviera Beach Club (The St. Regis)", "desc_es": "El club de playa más elegante de la capital con Privilee: arena dorada, mar turquesa, piscina y gastronomía de primer nivel.", "desc_en": "The capital's premier beach club via Privilee: golden sands, turquoise sea, chilled pools and 5-star dining.", "map": "https://maps.google.com/?q=Nation+Riviera+Beach+Club+Abu+Dhabi"}, {"area": "Abu Dhabi Capital", "name": "Gran Mezquita Sheikh Zayed", "desc_es": "Obra cumbre de la arquitectura islámica con mármol blanco de Macedonia, mosaicos florales y 82 cúpulas iluminadas.", "desc_en": "Pinnacle of modern Islamic architecture: pure white Macedonian marble, floral mosaics and 82 illuminated domes.", "map": "https://maps.google.com/?q=Sheikh+Zayed+Grand+Mosque"}, {"area": "Dubai Marina", "name": "Pier 7 (Asia Asia)", "desc_es": "Torre gastronómica circular en el agua con vistas de 360 grados sobre el canal de Dubai Marina para la cena de bienvenida.", "desc_en": "Circular dining tower rising from the marina water with 360-degree skyline views for our welcome dinner.", "map": "https://maps.google.com/?q=Pier+7+Dubai+Marina"}, {"area": "Dubai International Airport", "name": "DXB Terminal 3 (Emirates)", "desc_es": "Punto de bienvenida a la llegada del vuelo EK142 y punto de despedida matinal del vuelo EK141 de vuelta a Madrid.", "desc_en": "Touchdown welcome point for flight EK142 and sunrise departure point for flight EK141 back home to Madrid.", "map": "https://maps.google.com/?q=Dubai+Airport+Terminal+3"}];
+
+    // State Variables
+    let currentLang = 'es';
+    let currentCategory = 'all';
+    let currentLightboxIdx = 0;
+    let filteredPhotos = [...PHOTOS];
+
+    // Language Dictionary
+    const I18N = {
+      es: {
+        status: "Visita 100% Ejecutada • 8 Días Inolvidables 💛 🌼",
+        mainTitle: "Inés en Dubái — Diario de Recuerdos 💛 🌼",
+        mainSub: "Del 12 al 20 de Septiembre de 2026 • 37 Momentos Reconciliados • Base Marina Gate 2 💛 🌼",
+        langFlag: "🇬🇧",
+        langLabel: "View in English",
+        themeDark: "Modo Oscuro",
+        themeLight: "Modo Claro",
+        metricDays: "Días en Dubái",
+        metricPhotos: "Fotos Curadas",
+        metricVenues: "Lugares Emblemáticos",
+        metricAwards: "Premios del Viaje",
+        navGallery: "Galería de Momentos",
+        navDays: "Diario Día a Día",
+        navSchedule: "Plan y Cronograma",
+        navVenues: "Lugares Visitados",
+        navAwards: "Premios del Viaje",
+        chipAll: "Todas (37)",
+        chipFavs: "⭐ Favoritas de Alfonso (5)",
+        chipSkyline: "Skyline & Balcón",
+        chipDesert: "Desierto & Dunas",
+        chipBeach: "Playas & Relax",
+        chipDining: "Gastronomía & Cafés",
+        chipActive: "Aventura & Deporte",
+        scheduleIntro: "Plan estructurado por fases del día (mañana, tarde y noche) vivido en cada jornada del viaje, sin horarios rígidos de minutos pero con máxima fidelidad a lo acontecido.",
+        phaseMorning: "🌅 Mañana",
+        phaseAfternoon: "☀️ Tarde",
+        phaseEvening: "🌆 Atardecer & Noche",
+        statusExecuted: "100% Vivido",
+        highlightsHeading: "Momentos Destacados",
+        venuesHeading: "Lugares Clave",
+        vibeHeading: "Sensación & Ambiente",
+        allDaysPill: "Todos los Días",
+        dayPillPrefix: "Día",
+        openMaps: "Ver en Google Maps →",
+        footerNote: "¡Recuerdos imborrables en Dubái y Abu Dabi · Con todo el cariño! 💛 🌼"
+      },
+      en: {
+        status: "100% Executed Visit • 8 Unforgettable Days 💛 🌼",
+        mainTitle: "Inés in Dubai — Memories Journal 💛 🌼",
+        mainSub: "September 12 – 20, 2026 • 37 Reconciled Photos • Marina Gate 2 Base 💛 🌼",
+        langFlag: "🇪🇸",
+        langLabel: "Ver en Español",
+        themeDark: "Dark Mode",
+        themeLight: "Light Mode",
+        metricDays: "Days in Dubai",
+        metricPhotos: "Curated Photos",
+        metricVenues: "Iconic Venues",
+        metricAwards: "Trip Awards",
+        navGallery: "Photo Gallery",
+        navDays: "Day-by-Day Journal",
+        navSchedule: "Schedule Plan",
+        navVenues: "Visited Venues",
+        navAwards: "Trip Awards",
+        chipAll: "All Photos (37)",
+        chipFavs: "⭐ Alfonso's Favorites (5)",
+        chipSkyline: "Skyline & Balcony",
+        chipDesert: "Desert & Dunes",
+        chipBeach: "Beaches & Pools",
+        chipDining: "Dining & Cafes",
+        chipActive: "Adventure & Fitness",
+        scheduleIntro: "Structured day plan broken down by morning, afternoon, and evening phases — free of minute schedules while accurately preserving every event.",
+        phaseMorning: "🌅 Morning",
+        phaseAfternoon: "☀️ Afternoon",
+        phaseEvening: "🌆 Sunset & Night",
+        statusExecuted: "100% Lived",
+        highlightsHeading: "Key Highlights",
+        venuesHeading: "Key Venues",
+        vibeHeading: "Vibe & Atmosphere",
+        allDaysPill: "All Days",
+        dayPillPrefix: "Day",
+        openMaps: "Open in Google Maps →",
+        footerNote: "Unforgettable memories in Dubai & Abu Dhabi · With all my love! 💛 🌼"
+      }
+    };
+
+    // Render Gallery Photos
+    function renderGallery() {
+      const container = document.getElementById('gallery-container');
+      filteredPhotos = currentCategory === 'all' 
+        ? PHOTOS 
+        : PHOTOS.filter(p => p.cats && p.cats.includes(currentCategory));
+
+      container.innerHTML = filteredPhotos.map((p, idx) => {
+        const caption = currentLang === 'es' ? p.caption_es : p.caption_en;
+        const dateStr = currentLang === 'es' ? p.date_es : p.date_en;
+        const isGold = p.is_gold;
+        const goldBadge = isGold ? `<span class="gold-star-badge">🌟 TOP FAV</span>` : (p.is_fav ? `<span class="fav-star-badge">⭐ Fav</span>` : '');
+        return `
+          <div class="photo-card ${isGold ? 'is-gold' : ''}" onclick="openLightbox(${idx})">
+            <div class="photo-thumb-wrap">
+              <img src="./memories_photos/${p.file}" alt="${caption}" >
+              <span class="photo-badge-top">${currentLang === 'es' ? 'Día ' + p.day : 'Day ' + p.day}</span>
+              ${goldBadge}
+            </div>
+            <div class="photo-info">
+              <div class="photo-caption">${caption}</div>
+              <div class="photo-meta">
+                <span>📍 ${p.location}</span>
+                <span>${dateStr} • ${p.time}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Filter Gallery
+    function filterGallery(category) {
+      currentCategory = category;
+      document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('chip-' + category);
+      if (activeBtn) activeBtn.classList.add('active');
+      renderGallery();
+    }
+
+    // Render Day Journal
+    function renderDayJournal(selectedDay = 'all') {
+      const pillsContainer = document.getElementById('day-pills-bar');
+      const daysContainer = document.getElementById('days-container');
+
+      // Build day pills
+      let pillsHtml = `
+        <button class="day-pill-btn ${selectedDay === 'all' ? 'active' : ''}" onclick="renderDayJournal('all')">
+          ${I18N[currentLang].allDaysPill}
+        </button>
+      `;
+      for (let i = 1; i <= 9; i++) {
+        pillsHtml += `
+          <button class="day-pill-btn ${selectedDay == i ? 'active' : ''}" onclick="renderDayJournal(${i})">
+            ${I18N[currentLang].dayPillPrefix} ${i}
+          </button>
+        `;
+      }
+      pillsContainer.innerHTML = pillsHtml;
+
+      // Filter days
+      const daysToRender = selectedDay === 'all' 
+        ? DAYS_DATA 
+        : DAYS_DATA.filter(d => d.day == selectedDay);
+
+      daysContainer.innerHTML = daysToRender.map(d => {
+        const title = currentLang === 'es' ? d.title_es : d.title_en;
+        const dateStr = currentLang === 'es' ? d.date_es : d.date_en;
+        const tag = currentLang === 'es' ? d.tag_es : d.tag_en;
+        const summary = currentLang === 'es' ? d.summary_es : d.summary_en;
+        const highlights = currentLang === 'es' ? d.highlights_es : d.highlights_en;
+        const vibe = currentLang === 'es' ? d.vibe_es : d.vibe_en;
+
+        const dayPhotos = PHOTOS.filter(p => p.day === d.day);
+        const photosGridHtml = dayPhotos.map(p => {
+          const cap = currentLang === 'es' ? p.caption_es : p.caption_en;
+          const globalIdx = PHOTOS.findIndex(x => x.file === p.file);
+          const isGold = p.is_gold;
+          return `
+            <div class="mini-thumb-wrap ${isGold ? 'is-gold-thumb' : ''}" onclick="openLightbox(${globalIdx}, true)" title="${cap}">
+              <img src="./memories_photos/${p.file}" alt="${cap}" >
+              ${isGold ? '<span style="position:absolute; top:3px; right:3px; font-size:0.75rem; text-shadow:0 1px 4px #000;">🌟</span>' : ''}
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="day-card" id="day-card-${d.day}">
+            <div class="day-header">
+              <div class="day-title-block">
+                <h3>${currentLang === 'es' ? 'Día ' + d.day : 'Day ' + d.day} — ${title}</h3>
+                <div class="day-date-text">📅 ${dateStr}</div>
+              </div>
+              <span class="day-tag-badge">${tag}</span>
+            </div>
+
+            <p class="day-summary">${summary}</p>
+
+            <div class="day-highlights-box">
+              <div class="box-heading">${I18N[currentLang].highlightsHeading}</div>
+              <ul>
+                ${highlights.map(h => `<li>${h}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+              <strong>${I18N[currentLang].vibeHeading}:</strong> ${vibe}
+            </div>
+
+            ${dayPhotos.length > 0 ? `
+              <div class="day-photos-carousel">
+                ${photosGridHtml}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render Schedule Plans (REVAMPED - Morning, Afternoon, Evening)
+    function renderSchedulePlans() {
+      const container = document.getElementById('schedule-plans-container');
+      container.innerHTML = DAYS_DATA.map(d => {
+        const plan = currentLang === 'es' ? d.schedule_plan_es : d.schedule_plan_en;
+        const dateStr = currentLang === 'es' ? d.date_es : d.date_en;
+        const title = currentLang === 'es' ? d.title_es : d.title_en;
+        return `
+          <div class="plan-card">
+            <div class="plan-card-header">
+              <div class="plan-day-title">${currentLang === 'es' ? 'Día ' + d.day : 'Day ' + d.day} • ${dateStr}</div>
+              <span class="plan-status-tag">${I18N[currentLang].statusExecuted}</span>
+            </div>
+            <div style="font-size: 0.92rem; font-weight: 600; color: var(--text-main); margin-bottom: 12px;">
+              ${title}
+            </div>
+            <div class="plan-phases-grid">
+              <div class="phase-col">
+                <div class="phase-label">${I18N[currentLang].phaseMorning}</div>
+                <div class="phase-text">${plan.morning}</div>
+              </div>
+              <div class="phase-col">
+                <div class="phase-label">${I18N[currentLang].phaseAfternoon}</div>
+                <div class="phase-text">${plan.afternoon}</div>
+              </div>
+              <div class="phase-col">
+                <div class="phase-label">${I18N[currentLang].phaseEvening}</div>
+                <div class="phase-text">${plan.evening}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render Venues
+    function renderVenues() {
+      const container = document.getElementById('venues-container');
+      container.innerHTML = VENUES_DATA.map(v => {
+        const desc = currentLang === 'es' ? v.desc_es : v.desc_en;
+        return `
+          <div class="venue-card">
+            <div>
+              <div class="venue-area">${v.area}</div>
+              <div class="venue-name">${v.name}</div>
+              <div class="venue-desc">${desc}</div>
+            </div>
+            <div>
+              <a class="map-link-btn" href="${v.map}" target="_blank" rel="noopener">
+                ${I18N[currentLang].openMaps}
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render Awards (WITH REAL EMBEDDED PHOTOS)
+    function renderAwards() {
+      const container = document.getElementById('awards-container');
+      container.innerHTML = AWARDS_DATA.map(a => {
+        const cat = currentLang === 'es' ? a.category_es : a.category_en;
+        const title = currentLang === 'es' ? a.title_es : a.title_en;
+        const desc = currentLang === 'es' ? a.desc_es : a.desc_en;
+        const pIdx = PHOTOS.findIndex(x => x.file === a.photo);
+        return `
+          <div class="award-card">
+            <div class="award-photo-wrap" onclick="openLightbox(${pIdx >= 0 ? pIdx : 0}, true)">
+              <img src="./memories_photos/${a.photo}" alt="${title}" >
+            </div>
+            <div class="award-body">
+              <div class="award-category-row">
+                <span>${a.icon}</span>
+                <span>${cat}</span>
+              </div>
+              <div class="award-title">${title}</div>
+              <div class="award-desc">${desc}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Navigation Switcher
+    function switchNavTab(tabId) {
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      const activeBtn = document.querySelector(`.nav-tab-btn[onclick="switchNavTab('${tabId}')"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const targetPane = document.getElementById('pane-' + tabId);
+      if (targetPane) targetPane.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Language Toggle
+    function toggleLanguage() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('ines_memories_lang', currentLang);
+      updateAppLanguage();
+    }
+
+    function updateAppLanguage() {
+      const dict = I18N[currentLang];
+      
+      // Header texts
+      document.getElementById('txt-status').innerText = dict.status;
+      document.getElementById('txt-main-title').innerText = dict.mainTitle;
+      document.getElementById('txt-main-sub').innerText = dict.mainSub;
+      document.getElementById('txt-lang-flag').innerText = dict.langFlag;
+      document.getElementById('txt-lang-label').innerText = dict.langLabel;
+      
+      // Metric labels
+      document.getElementById('txt-metric-days').innerText = dict.metricDays;
+      document.getElementById('txt-metric-photos').innerText = dict.metricPhotos;
+      document.getElementById('txt-metric-venues').innerText = dict.metricVenues;
+      document.getElementById('txt-metric-awards').innerText = dict.metricAwards;
+      
+      // Nav tabs
+      document.getElementById('nav-lbl-gallery').innerText = dict.navGallery;
+      document.getElementById('nav-lbl-days').innerText = dict.navDays;
+      document.getElementById('nav-lbl-schedule').innerText = dict.navSchedule;
+      document.getElementById('nav-lbl-venues').innerText = dict.navVenues;
+      document.getElementById('nav-lbl-awards').innerText = dict.navAwards;
+      
+      // Gallery chips
+      document.getElementById('chip-all').innerText = dict.chipAll;
+      document.getElementById('chip-favs').innerText = dict.chipFavs;
+      document.getElementById('chip-skyline').innerText = dict.chipSkyline;
+      document.getElementById('chip-desert').innerText = dict.chipDesert;
+      document.getElementById('chip-beach').innerText = dict.chipBeach;
+      document.getElementById('chip-dining').innerText = dict.chipDining;
+      document.getElementById('chip-active').innerText = dict.chipActive;
+      
+      // Schedule intro
+      document.getElementById('txt-schedule-intro').innerText = dict.scheduleIntro;
+
+      // Theme toggle label
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      document.getElementById('txt-theme-label').innerText = currentTheme === 'dark' ? dict.themeLight : dict.themeDark;
+
+      // Re-render views with new language
+      renderGallery();
+      renderDayJournal();
+      renderSchedulePlans();
+      renderVenues();
+      renderAwards();
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('ines_memories_theme', newTheme);
+
+      const dict = I18N[currentLang];
+      document.getElementById('txt-theme-icon').innerText = newTheme === 'dark' ? '☀️' : '🌙';
+      document.getElementById('txt-theme-label').innerText = newTheme === 'dark' ? dict.themeLight : dict.themeDark;
+    }
+
+    // Lightbox Controls
+    let useFullPhotosList = false;
+
+    function openLightbox(idx, fromFullList = false) {
+      useFullPhotosList = fromFullList;
+      currentLightboxIdx = idx;
+      updateLightboxContent();
+      document.getElementById('lightbox-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== e.currentTarget && !e.target.classList.contains('lightbox-close-btn')) return;
+      document.getElementById('lightbox-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      const list = useFullPhotosList ? PHOTOS : filteredPhotos;
+      if (currentLightboxIdx < 0) currentLightboxIdx = list.length - 1;
+      if (currentLightboxIdx >= list.length) currentLightboxIdx = 0;
+
+      const p = list[currentLightboxIdx];
+      const caption = currentLang === 'es' ? p.caption_es : p.caption_en;
+      const dateStr = currentLang === 'es' ? p.date_es : p.date_en;
+      const dayStr = currentLang === 'es' ? 'Día ' + p.day : 'Day ' + p.day;
+
+      document.getElementById('lightbox-img').src = './memories_photos/' + p.file;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('lightbox-day-lbl').innerText = dayStr + ' (' + dateStr + ')';
+      document.getElementById('lightbox-time-lbl').innerText = p.time + ' • ' + p.location;
+      document.getElementById('lightbox-idx-lbl').innerText = (currentLightboxIdx + 1) + ' / ' + list.length;
+    }
+
+    function prevLightboxPhoto() {
+      currentLightboxIdx--;
+      updateLightboxContent();
+    }
+
+    function nextLightboxPhoto() {
+      currentLightboxIdx++;
+      updateLightboxContent();
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') prevLightboxPhoto();
+      if (e.key === 'ArrowRight') nextLightboxPhoto();
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Touch swipe navigation for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const modalWrap = document.getElementById('lightbox-modal');
+
+    modalWrap.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modalWrap.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 45) {
+        if (swipeDistance < 0) {
+          nextLightboxPhoto();
+        } else {
+          prevLightboxPhoto();
+        }
+      }
+    }
+
+    // Initial Bootstrap
+    document.addEventListener('DOMContentLoaded', () => {
+      // Default to Spanish as requested
+      currentLang = 'es';
+      updateAppLanguage();
+      renderGallery();
+      renderDayJournal();
+      renderSchedulePlans();
+      renderVenues();
+      renderAwards();
+    });
+  </script>
+</body>
+</html>
