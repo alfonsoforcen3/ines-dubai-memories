@@ -320,6 +320,110 @@
       border-color: var(--accent-rose);
     }
 
+    
+    /* DAY GALLERY SECTIONS & HEADERS */
+    .day-gallery-group {
+      margin-bottom: 48px;
+    }
+
+    .day-gallery-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border-color);
+      position: relative;
+    }
+
+    .day-gallery-header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #f59e0b);
+      border-radius: 999px;
+    }
+
+    .day-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .day-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.15), rgba(245, 158, 11, 0.08));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.08);
+    }
+
+    .day-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .day-title-text {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .day-date-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .day-photos-count {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 5px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 640px) {
+      .day-gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 10px;
+        margin-bottom: 14px;
+      }
+      .day-gallery-group {
+        margin-bottom: 36px;
+      }
+      .day-title-text {
+        font-size: 1.05rem;
+      }
+      .day-photos-count {
+        align-self: flex-start;
+      }
+    }
+
     /* GALLERY GRID */
     .gallery-grid {
       display: grid;
@@ -1040,7 +1144,7 @@
 
     <!-- TAB 1: GALLERY -->
     <section class="tab-pane active" id="pane-gallery">
-      <div class="gallery-grid" id="gallery-container">
+      <div id="gallery-container">
         <!-- Injected by JS -->
       </div>
     </section>
@@ -1204,32 +1308,71 @@
     };
 
     // Render Gallery Photos
+const DAY_ICONS = {
+      1: '🌹', 2: '🏜️', 3: '🏙️', 4: '🌴', 5: '💪', 6: '🏖️', 7: '🕌', 8: '☕', 9: '✈️'
+    };
+
     function renderGallery() {
       const container = document.getElementById('gallery-container');
-      filteredPhotos = PHOTOS;
+      
+      const dayGroupsHtml = DAYS_DATA.map(d => {
+        const dayNum = d.day;
+        const dayPhotos = [];
+        PHOTOS.forEach((p, idx) => {
+          if (p.day === dayNum) dayPhotos.push({ p, idx });
+        });
+        if (dayPhotos.length === 0) return '';
 
-      container.innerHTML = filteredPhotos.map((p, idx) => {
-        const caption = currentLang === 'es' ? p.caption_es : p.caption_en;
-        const dateStr = currentLang === 'es' ? p.date_es : p.date_en;
-        const isGold = p.is_gold;
-        const goldBadge = isGold ? `<span class="gold-star-badge">🌟 TOP FAV</span>` : (p.is_fav ? `<span class="fav-star-badge">⭐ Fav</span>` : '');
-        return `
-          <div class="photo-card ${isGold ? 'is-gold' : ''}" onclick="openLightbox(${idx})">
-            <div class="photo-thumb-wrap">
-              <img src="./memories_photos/${p.file}" alt="${caption}" >
-              <span class="photo-badge-top">${currentLang === 'es' ? 'Día ' + p.day : 'Day ' + p.day}</span>
-              ${goldBadge}
-            </div>
-            <div class="photo-info">
-              <div class="photo-caption">${caption}</div>
-              <div class="photo-meta">
-                <span>📍 ${p.location}</span>
-                <span>${dateStr} • ${p.time}</span>
+        const icon = DAY_ICONS[dayNum] || '📅';
+        const title = currentLang === 'es' ? d.title_es : d.title_en;
+        const dateStr = currentLang === 'es' ? d.date_es : d.date_en;
+        const countLabel = currentLang === 'es' 
+          ? `${dayPhotos.length} ${dayPhotos.length === 1 ? 'foto' : 'fotos'}`
+          : `${dayPhotos.length} ${dayPhotos.length === 1 ? 'photo' : 'photos'}`;
+
+        const cardsHtml = dayPhotos.map(({ p, idx }) => {
+          const caption = currentLang === 'es' ? p.caption_es : p.caption_en;
+          const pDate = currentLang === 'es' ? p.date_es : p.date_en;
+          const isGold = p.is_gold;
+          const goldBadge = isGold ? `<span class="gold-star-badge">🌟 TOP FAV</span>` : (p.is_fav ? `<span class="fav-star-badge">⭐ Fav</span>` : '');
+          return `
+            <div class="photo-card ${isGold ? 'is-gold' : ''}" onclick="openLightbox(${idx})">
+              <div class="photo-thumb-wrap">
+                <img src="./memories_photos/${p.file}" alt="${caption}" >
+                <span class="photo-badge-top">${currentLang === 'es' ? 'Día ' + p.day : 'Day ' + p.day}</span>
+                ${goldBadge}
               </div>
+              <div class="photo-info">
+                <div class="photo-caption">${caption}</div>
+                <div class="photo-meta">
+                  <span>📍 ${p.location}</span>
+                  <span>${pDate} • ${p.time}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="day-gallery-group" id="day-group-${dayNum}">
+            <div class="day-gallery-header">
+              <div class="day-header-left">
+                <span class="day-pill-badge">${icon} ${currentLang === 'es' ? 'Día ' + dayNum : 'Day ' + dayNum}</span>
+                <div class="day-title-wrap">
+                  <h3 class="day-title-text">${title}</h3>
+                  <span class="day-date-sub">${dateStr}</span>
+                </div>
+              </div>
+              <span class="day-photos-count">${countLabel}</span>
+            </div>
+            <div class="gallery-grid">
+              ${cardsHtml}
             </div>
           </div>
         `;
       }).join('');
+
+      container.innerHTML = dayGroupsHtml;
     }
 
     // Filter Gallery
